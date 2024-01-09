@@ -7,7 +7,7 @@
 \date{January 18, 2024 | Seminar@Institute of Anatomy}
 
 % Some often used abbreviations/commands
-\newcommand{\everyframe}{1}% use only every nth frame for the animations
+\newcommand{\everyframe}{333}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
 \newcommand{\imageheight}{0.618\paperheight}% set global image heidht
 \newlength\imagescale% needed for scalebars
@@ -41,6 +41,7 @@
 \usepackage{gitinfo2}
 \usepackage{xspace}
 \usepackage{ccicons}
+\usepackage{fontawesome5}
 \usepackage[version=4]{mhchem}
 \usepackage{animate}
 \usepackage{listings}
@@ -228,8 +229,6 @@ Some text\footnote{doi:10/gsst8t}\\
 Some text\footcite{Haberthuer2023}
 \end{frame}
 
-\end{document}
-
 \begin{frame}
 	\frametitle{Grüessech from the \uct-group}
 	\centering
@@ -277,6 +276,102 @@ Some text\footcite{Haberthuer2023}
 			\only<3|handout:0>{\source{bruker.com/skyscan2214}{}}%
 		\end{column}%
 	\end{columns}%
+\end{frame}
+
+\section{Reminder about teeth}
+\mode<beamer>{%
+	\begin{frame}
+		\frametitle{Internal morphology of human teeth}
+		\begin{tikzpicture}[remember picture,overlay]%
+			\node at (current page.center) [shift={(0,-25pt)}]{%
+			\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./movies/tooth045/transparent-slices-rcs/image0}{000}{457}%
+				};%
+		\end{tikzpicture}%
+		Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}
+		\begin{itemize}
+			\item Numbers instead of just pretty images
+			\item Segmentation of teeth and root canal
+			\item (Unbiased) Characterization
+			\item Reproducible and automated image analysis (\href{https://www.python.org/}{\faPython} in \href{https://jupyter.org/}{Jupyter}~\cite{Kluyver2016})
+		\end{itemize}
+	\end{frame}
+}
+
+% \begin{frame}
+% 	\frametitle{How?}
+% 	\begin{columns}
+% 		\begin{column}{0.49\linewidth}
+% 			\begin{itemize}
+% 				\item<1-> 104 extracted human permanent mandibular canines
+% 				\item<2-> \uct imaging
+% 				\item<5-> Root canal configuration, according to~\citeauthor{Briseno-Marroquin2015}~\cite{Briseno-Marroquin2015}
+% 				\item<6-> \emph{Reproducible} analysis~\cite{Haberthuer2020a}\onslide<7>{, \eg you can \href{https://mybinder.org/v2/gh/habi/zmk-tooth-cohort/master?filepath=ToothAnalysis.ipynb}{click a button to double-check} or \href{https://nbviewer.jupyter.org/github/habi/zmk-tooth-cohort/blob/master/ToothAnalysis.ipynb}{recalculate the results yourself!}}
+% 			\end{itemize}
+% 		\end{column}
+% 		\begin{column}{0.49\linewidth}
+% 			\only<1|handout:1>{%
+% 				\centering%
+% 				\renewcommand{\imagewidth}{0.75\linewidth}
+% 				\pgfmathsetlength{\imagescale}{\imagewidth/2716}%
+% 				\def\x{1678}% scalebar-x starting at golden ratio of image width of 2716px = 1678
+% 				\def\y{2444}% scalebar-y at 90% of image height of 2716px = 2444
+% 				\begin{tikzpicture}[x=\imagescale,y=-\imagescale]
+% 					\node[anchor=north west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=\imagewidth]{./images/bucketofteeth}};
+% 					% 2132.087px = 140.0mm -> 100px = 6566.337um -> 7.615px = 500um, 1.523px = 100um
+% 					%\draw[|-|,blue,thick] (299,1340) -- (2430,1406) node [sloped,midway,above,fill=white,semitransparent,text opacity=1] {\SI{140.0}{\milli\meter} (2132px) TEMPORARY!};
+% 					\draw[|-|,white,thick,shadowed] (\x,\y) -- (\x+761.5,\y) node [midway,above] {\shadowtext{\SI{5}{\centi\meter}}};
+% 				\end{tikzpicture}%
+% 				\renewcommand{\imagewidth}{\columnwidth}
+% 				}%
+% 			\only<2|handout:2>{%
+% 				\centering%
+% 				\includegraphics[width=\imagewidth]{./images/1272}%
+% 				\source{bruker.com/skyscan1272}{}%
+% 				}%
+% 			\only<3|handout:3>{%
+% 				\lstinputlisting[linerange={2-4,15-15,17-19,28-30,36-37,40-40,44-44,53-54}]{./logfiles/Tooth045.log}%
+% 				}%
+% 			\only<4|handout:4>{%
+% 				\emph{Sample changer} on the SkyScan 1272\newline
+% 				In total:
+% 				\begin{itemize}
+% 					\item 13 days of \emph{continuous} \uct scanning
+% 					\item \SI{819}{\giga\byte} of raw data\newline\num{230648} TIFF projections
+% 					\item \SI{326}{\giga\byte} data as input for analysis\newline\num{282062} PNG reconstructions
+% 				\end{itemize}
+% 					}%
+% 			\renewcommand{\imagewidth}{\linewidth}%
+% 			\only<5|handout:5>{%
+% 				\centering%
+% 				\includegraphics[width=\imagewidth]{./images/briseno}%
+% 				\sourcecite{Briseno-Marroquin2015}{Fig.~2}%
+% 				}%
+% 			\only<6|handout:6>{%
+% 				\centering%
+% 				\mode<beamer>{%
+% 					\animategraphics[loop,autoplay,width=\imagewidth,every=\everyframe]{24}{./movies/coder/coder-}{0}{133}%
+% 					\source{gph.is/2nqkple}{}%
+% 					}%
+% 				\mode<handout>{%
+% 					\includegraphics[width=\imagewidth]{./movies/coder/coder-118}%
+% 					\source{gph.is/2nqkple}{}%
+% 					}%
+% 				}%
+% 			\only<7|handout:7>{%
+% 				\centering%
+% 				\href{https://mybinder.org/v2/gh/habi/zmk-tooth-cohort/master?filepath=ToothAnalysis.ipynb}{\includegraphics[height=\imageheight]{./images/binder}}%
+% 				}%
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Extraction of root canal space}
+	\begin{tikzpicture}[remember picture,overlay]%
+		\node at (current page.center) [shift={(0,-25pt)}]{%
+			\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./movies/tooth045/transparent-slices-rcs/image0}{000}{457}%
+		};%
+	\end{tikzpicture}%
 \end{frame}
 
 \begin{frame}[allowframebreaks]
