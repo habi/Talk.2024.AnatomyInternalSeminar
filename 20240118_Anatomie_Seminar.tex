@@ -1,4 +1,6 @@
-\documentclass[aspectratio=169]{beamer}
+% Compile with:
+% latexmk -pvc -interaction=nonstopmode *Seminar.tex
+\documentclass[aspectratio=169,10pt]{beamer}
 \usetheme{UniBern}
 \title{Tomographic imaging of fish}
 \subtitle{Or how to image much, \emph{much} more teeth}
@@ -15,12 +17,20 @@
 \newcommand{\eg}{e.\,g.\xspace}%
 \newcommand{\ie}{i.\,e.\xspace}%
 
-\usepackage[backend=biber,
-	style=numeric,
-	url=false,
-	isbn=true,
-	maxnames=1,
-	sorting=none]{biblatex}
+% \usepackage[backend=biber,
+% 	url=false,
+% 	isbn=false,
+% 	eprint=false,
+% 	sorting=none]{biblatex}
+
+
+\usepackage[%
+    backend=biber,
+    style=ieee,
+		url=false,
+		isbn=false,
+    citetracker=true,
+    ]{biblatex}
 \addbibresource{../../Documents/library.bib} % FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
 \usepackage{tikz}
 	\usetikzlibrary{shadows,spy}
@@ -161,17 +171,50 @@
 	% Make the source command an \href{link}{text}
 	\raisebox{-1.618ex}{%
 		\makebox[0pt][r]{%
-			\tiny\href{http://#1}{#2}, #3%
+			\tiny\href{#1}{#2}, #3%
 			}%
 		}%
 	}%
 
-% References as footnotes at the bottom of the slides
-% https://tex.stackexchange.com/a/368760/828
+% % References as footnotes at the bottom of the slides
+% % https://tex.stackexchange.com/a/368760/828
+% \makeatletter
+% \renewcommand\@makefnmark{\xspace\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]}}
+% \renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}
+% \makeatother
+
 \makeatletter
-\renewcommand\@makefnmark{\xspace\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]}}
-\renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}
+\newbibmacro*{hypercite}{%
+  \renewcommand{\@makefntext}[1]{\noindent\normalfont##1}%
+  [\printfield{labelnumber}]\footnotetext{%
+    \blxmkbibnote{foot}{%
+    \printtext[labelnumberwidth]{%
+      \printfield{prefixnumber}%
+      \printfield{labelnumber}}%
+    \addspace
+    \fullcite{\thefield{entrykey}}}}}
+\DeclareCiteCommand{\hypercite}%
+  {\usebibmacro{cite:init}}
+  {\usebibmacro{hypercite}}
+  {}
+  {\usebibmacro{cite:dump}}
 \makeatother
+
+% Reset footnote counter for every frame
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
+% Since we're using \footfullcite a lot, we remove most items to show from the citations, to keep the frames as clean as possible
+\AtEveryCitekey{\clearfield{title}}
+\AtEveryCitekey{\clearfield{journaltitle}}
+% No "In:" http://tex.stackexchange.com/a/10686/828
+\renewbibmacro{in:}{}
+\AtEveryCitekey{\clearfield{volume}}
+\AtEveryCitekey{\clearfield{number}}
+\AtEveryCitekey{\clearfield{year}}
+% No parentheses around the (now empty) year: https://tex.stackexchange.com/a/147537/828
+\renewcommand{\bibopenparen}{\addcomma\addspace}
+\renewcommand{\bibcloseparen}{\addcomma\addspace}
+\AtEveryCitekey{\clearfield{pages}}
+\AtEveryCitekey{\clearfield{issn}}
 
 \begin{document}
 % No footline on the title page
