@@ -1,6 +1,7 @@
 % Compile with:
 % latexmk -pvc -interaction=nonstopmode *Seminar.tex
 \documentclass[aspectratio=169,10pt]{beamer}
+%\documentclass[aspectratio=169,10pt,draft]{beamer}
 \usetheme{UniBern}
 \title{Tomographic imaging of fish}
 \subtitle{Or how to image much, \emph{much} more teeth}
@@ -19,10 +20,10 @@
 
 \usepackage[%
 	backend=biber,
-	style=ieee,
+   	style=ieee,
 	url=false,
 	isbn=false,
-	citetracker=true,
+    	citetracker=true,
     ]{biblatex}
 \addbibresource{../../Documents/library.bib} % FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
 \usepackage{tikz}
@@ -359,10 +360,17 @@
 		\end{columns}
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Datasets}
-% 		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./images/EAWAG/animation.intro/ 104016}{0000}{0050}%
-% \end{frame}
+ \begin{frame}
+ 	\frametitle{Datasets}
+\centering
+		\includegraphics[height=\imageheight]{./images/EAWAG/animation.intro/1040160050}%
+ \end{frame}
+
+ \begin{frame}
+ 	\frametitle{Datasets}
+\centering
+ 		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./images/EAWAG/animation.intro/104016}{0040}{0050}%
+ \end{frame}
 
 % \section{cox7a}
 % \begin{frame}
@@ -372,7 +380,7 @@
 % 		\item \footfullcite{Mercader2024}
 % 	\end{itemize}
 % \end{frame}
-%
+
 % \begin{frame}
 % 	\frametitle{Volume plot}
 % \end{frame}
