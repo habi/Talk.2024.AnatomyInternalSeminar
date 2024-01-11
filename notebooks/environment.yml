@@ -1,0 +1,22 @@
+name: seminar24
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - imageio
+  - scikit-image
+  - pandas
+  - matplotlib<=3.7
+  - matplotlib-scalebar
+  - seaborn
+  - statsmodels
+  - dask
+  - dask-image
+  - zarr
+  - numcodecs
+  - jupyterlab
+  - dask-labextension
+  - openpyxl
+  - tqdm
+  - scikit-learn
