@@ -183,27 +183,6 @@
 	\end{frame}%
 }
 
-% % Alignment frames to test the text-block alignment
-% % Mostly here for historic reasons :)
-% \begin{frame}{Alignment frame}
-% 	\begin{tikzpicture}%
-% 		\def\cut{1.75}%
-% 		\draw [->] (0,\cut) -- (0.0,\textheight-\cut);%
-% 		\draw [<->] (0.5\textwidth,\cut) -- (0.5\textwidth,\textheight-\cut);%
-% 		\draw [|-|] (\textwidth,\cut) -- (\textwidth,\textheight-\cut);%
-% 		\draw [<->] (0,\cut) -- node [midway, above] {(c, cut) -- (textwidth-cut,textheight-cut))} (\textwidth-\cut,\textheight-\cut) ;%
-% 	\end{tikzpicture}%
-% \end{frame}
-%
-% \begin{frame}{Alignment frame II}
-% \centering%
-% \color{red}\rule{0.618\paperwidth}{\paperheight-0.125\paperheight-0.032\paperheight-6ex}%
-% \end{frame}
-%
-% \begin{frame}[allowframebreaks]{Alignment frame III}
-% 	\lipsum[1-3]
-% \end{frame}
-
 \begin{frame}
 	\frametitle{Grüessech mitenang!}
 	\begin{itemize}
@@ -217,18 +196,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{plot}
-% Adding plots with TikZ is possible with matplotlib<=3.7 and https://github.com/nschloe/tikzplotlib
-\input{./plots/cox7a_volume.tex}
-\end{frame}
-
-\begin{frame}
-\frametitle{plot}
-Some text\footnote{doi:10/gsst8t}\\
-Some text\footcite{Haberthuer2023}
-\end{frame}
-
+\section{Introduction}
 \begin{frame}
 	\frametitle{Grüessech from the \uct-group}
 	\centering
@@ -365,13 +333,54 @@ Some text\footcite{Haberthuer2023}
 % 	\end{columns}
 % \end{frame}
 
+\section{Cichlids}
 \begin{frame}
-	\frametitle{Extraction of root canal space}
-	\begin{tikzpicture}[remember picture,overlay]%
-		\node at (current page.center) [shift={(0,-25pt)}]{%
-			\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./movies/tooth045/transparent-slices-rcs/image0}{000}{457}%
-		};%
-	\end{tikzpicture}%
+	\frametitle{Many more teeth, but from Cichlids}
+		\begin{columns}
+			\begin{column}{0.5\linewidth}
+				\begin{itemize}
+					\item Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}
+					\item 133 Cichlids from Lake Victoria, East Africa, to understand the functional anatomy of their skulls and jaws
+					\begin{itemize}
+						\item 375 scans in total
+						\item 46 days of scanning time
+						\item \qty{9.8}{\tera\byte} of raw data
+						\item \qty{1.5}{\tera\byte} of reconstructions
+						\item +\num{1000000} images
+					\end{itemize}
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.5\linewidth}
+				\centering
+				\only<1>{%
+					\includegraphics[width=\imagewidth]{./images/EAWAG/journal.pone.0291003.g001.png}%
+					\sourcelink{https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0291003.g001}{doi:10.1371/journal.pone.0291003}{Fig.~1}%
+					}%
+				\includegraphics<2>[width=\imagewidth]{./images/EAWAG/lengths.plot.png}%
+				\includegraphics<3>[width=\imagewidth]{./images/EAWAG/lengths.violinplot.png}%
+				\includegraphics<4>[width=\imagewidth]{./images/EAWAG/lengths.boxplot.png}%
+				\includegraphics<5>[width=\imagewidth]{./images/EAWAG/lengths.boxenplot.png}%
+				\includegraphics<6>[width=\imagewidth]{./images/EAWAG/lengths.boxenplot.only.png}%
+			\end{column}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Datasets}
+		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./images/EAWAG/animation.intro/ 104016}{0000}{0050}%
+\end{frame}
+
+\section{cox7a}
+\begin{frame}
+	\frametitle{More fish, but muscles}
+	\begin{itemize}
+		\item Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber
+		\item \footfullcite{Mercader2024}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Volume plot}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
