@@ -17,19 +17,12 @@
 \newcommand{\eg}{e.\,g.\xspace}%
 \newcommand{\ie}{i.\,e.\xspace}%
 
-% \usepackage[backend=biber,
-% 	url=false,
-% 	isbn=false,
-% 	eprint=false,
-% 	sorting=none]{biblatex}
-
-
 \usepackage[%
-    backend=biber,
-    style=ieee,
-		url=false,
-		isbn=false,
-    citetracker=true,
+	backend=biber,
+	style=ieee,
+	url=false,
+	isbn=false,
+	citetracker=true,
     ]{biblatex}
 \addbibresource{../../Documents/library.bib} % FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
 \usepackage{tikz}
@@ -300,12 +293,12 @@
 				\item 104 extracted human permanent mandibular canines
 				\item Segmentation of teeth and root canal
 				\item Numbers instead of just pretty images, unbiased characterization
-				\item Reproducible and automated image analysis (\href{https://www.python.org/}{\faPython} in \href{https://jupyter.org/}{Jupyter}~\cite{Kluyver2016}
+				\item Reproducible and automated image analysis with \href{https://www.python.org/}{\faPython} in \href{https://jupyter.org/}{Jupyter}~\cite{Kluyver2016}
 			\end{itemize}
 		\end{column}%
 		\begin{column}{0.5\textwidth}%
 			\centering%
-			\renewcommand{\imagewidth}{0.75\linewidth}
+			\renewcommand{\imagewidth}{0.7\linewidth}
 			\only<1>{%
 			\pgfmathsetlength{\imagescale}{\imagewidth/2716}%
 			\def\x{1678}% scalebar-x starting at golden ratio of image width of 2716px = 1678
