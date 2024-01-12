@@ -1,0 +1,24 @@
+// Record contrast
+At frame 0:
+- change channel 1 intensity to (0.0, 125.0, 1.0)
+- change channel 1 alpha to (0.0, 125.0, 2.0)
+- change channel 1 color to (255.0, 255.0, 255.0)
+- change channel 1 lookup table to fixed channel color
+- change channel 1 light to (1.0, 0.0, 0.0, 5.0)
+- change channel 1 lighting to on
+- change channel 1 weight to 1.0
+- change rendering algorithm to independent transparency
+- change background color to (217, 217, 217)
+- rotate by 90 degrees horizontally 
+- rotate by 270 degrees vertically 
+- translate by (5000.0, 0.0, 0.0)
+
+From frame 1 to frame 25:
+- translate by (-5000.0, 0.0, 0.0)
+- zoom by a factor of 0.5
+
+From frame 20 to frame 50:
+- rotate by 360 degrees vertically 
+
+At frame 51:
+- reset transformation
