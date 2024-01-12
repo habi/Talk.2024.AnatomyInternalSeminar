@@ -300,7 +300,7 @@
  \only<2>{
 	 	\begin{tikzpicture}[remember picture,overlay]%
 	 	\node at (current page.center) [shift={(0,-25pt)}]{%
-		\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./media/ZMK/tooth045/transparent-slices-rcs/image0}{000}{457}%
+	 	\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./media/ZMK/tooth045/transparent-slices-rcs/image0}{000}{457}%
 	 		};%
 	 \end{tikzpicture}%
 	 }
@@ -344,13 +344,15 @@
 \end{frame}
 
  \begin{frame}
-	\frametitle{Results}
+ 	\frametitle{Results}
+	Update animation!
 	\centering
-		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.intro/104016}{0040}{0050}%
+ 		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.intro/104016}{0040}{0050}%
  \end{frame}
 
  \begin{frame}
 	 \frametitle{Results}
+	 Update animation!
  \centering
 		 \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/movie.104016_PJ/104016_PJ_00}{000}{236}%
  \end{frame}
@@ -370,26 +372,47 @@
  	\only<10>{\href{https://htmlpreview.github.io/?https://github.com/habi/EAWAG-manuscript/blob/main/content/data/104016_Enterochromis_I_cinctus_St_E.head.rec.Otolith.Region.3D.html}{Exported 3D view}}%
  \end{frame}
 
+
  \subsection{Fish II}
  \renewcommand{\imageheight}{0.618\paperheight}% set global image height
  \begin{frame}
- 	\frametitle{Data wrangling by example: Zebrafish}
+ 		\frametitle{More fish, but muscles}
  	\begin{columns}
- 		\begin{column}{0.618\linewidth}
+ 		\begin{column}{0.5\linewidth}
+			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber
  			\begin{itemize}
- 				\item Collaboration, part of a \emph{much} bigger story\footcite{Mercader2023}
+				\item Influence of \emph{cox7a} on muscle volume
  				\item Confirmation of results by \uct
+				\item 2\(\times\)2\(\times\)5 Zebrafish, WT and KO
  			\end{itemize}
  		\end{column}
- 		\begin{column}{0.382\linewidth}
+ 		\begin{column}{0.5\linewidth}
  			\centering
- 			\includegraphics<1|handout:1>[height=\imageheight]{./media/cox7a/Cell_Fig3}%
- 			\only<2|handout:2>{%
- 				\lstinputlisting[linerange={2-4,15-15,17-19,28-30,36-37,40-40,44-44,53-54}]{./logfiles/ko02.log}%
+ 			\includegraphics<1>[height=\imageheight]{./media/cox7a/Cell_Fig3}%
+ 			\only<2>{%
+ 				\lstinputlisting[linerange={2-4,15-15,17-19,28-30,36-37,40-40,44-44,53-54}]{./media/cox7a/5268A/proj/5268A.log}%
  				}%
  		\end{column}
  	\end{columns}
  \note{The oxidative phosphorylation (OXPHOS) system is dynamic and the respiratory complexes (RCs) coexist with super-assembled quaternary structures called supercomplexes (SCs). How assembly occurs and the physiological role of supercomplex assembly is still under intensive investigation. The Cox7a family member Cox7a2l, also known as Scaf1, promotes CIII-CIV super assembly and energetic efficiency in zebrafish, mice, and humans. Here we studied the role of a second member of the Cox7a family, Cox7a1 in SC assembly and striated muscle physiology. We found that this protein drives CIV homodimer formation, which increases CIV activity. The substantial reduction in CIV2 formation led to a profound metabolic rearrangement with a consequent non-pathological loss of skeletal muscle performance and muscle mass not observed in cox7a2l. Ablation of Cox7a1 also rewired heart metabolism. While overall cardiac function was not affected, the absence of Cox7a1, but not Cox7a2l increased cardiac regenerative capacity. In sum, we describe a high specificity of Cox7a isoform in controlling OXPHOS assembly and muscle metabolism. While overall OXPHOS activity is modified, the loss of CIII-CIV heterodimer formation or CIV homodimer formation have very distinct metabolic and physiological consequences, highlighting the complexity of OXPHOS function and the importance of cox7a1 in striated muscle maturation.}
+ \end{frame}
+
+
+ \begin{frame}
+  \frametitle{Image analysis}
+	\begin{itemize}
+	 	\item Large story
+	 	\item Cutting samples to equal length
+	 	\item Histogram already shows a difference
+	 	\item Thresholding
+	 	\item Volume counting
+	 	\item What is the result: we see difference in volume, but \emph{not} in weight
+	 \end{itemize}
+  \centering
+  \includegraphics<1|handout:1>[height=\imageheight]{./media/cox7a/Overview}%
+  \includegraphics<2|handout:2>[height=\imageheight]{./media/cox7a/ko02_Cut}%
+  \includegraphics<3|handout:3>[height=\imageheight]{./media/cox7a/Histograms_Experiment}%
+  \includegraphics<4|handout:4>[height=\imageheight]{./media/cox7a/Volume_Boxplot}%
  \end{frame}
 
  \begin{frame}
@@ -400,44 +423,6 @@
  	\includegraphics<3|handout:3>[height=\imageheight]{./media/cox7a/Histograms_Experiment}%
  	\includegraphics<4|handout:4>[height=\imageheight]{./media/cox7a/Volume_Boxplot}%
  \end{frame}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{cox7a}
-\begin{frame}
-	\frametitle{More fish, but muscles}
-			\begin{columns}
-			\begin{column}{0.5\linewidth}
-		 	Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber
-		\begin{itemize}
- 		 		 	\item 20 Zebrafish
-					\begin{itemize}
-						\item Influence of \emph{cox7a} on muscle volume
-					\end{itemize}
-		 		\end{itemize}
-			\end{column}
-			\begin{column}{0.5\linewidth}
-				\centering
-				Volume plot
-			\end{column}
-		\end{columns}
-\end{frame}
-
 
 \begin{frame}[allowframebreaks]
 	\frametitle{References}
