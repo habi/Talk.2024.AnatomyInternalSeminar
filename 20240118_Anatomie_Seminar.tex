@@ -10,7 +10,7 @@
 \date{January 18, 2024 | Seminar@Institute of Anatomy}
 
 % Some often used abbreviations/commands
-\newcommand{\everyframe}{333}% use only every nth frame for the animations
+\newcommand{\everyframe}{33}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
 \newcommand{\imageheight}{0.618\paperheight}% set global image heidht
 \newlength\imagescale% needed for scalebars
@@ -46,7 +46,8 @@
 \usepackage{xspace}
 \usepackage{ccicons}
 \usepackage{fontawesome5}
-\usepackage[version=4]{mhchem}
+% \usepackage[version=4]{mhchem}
+\usepackage{csquotes}
 \usepackage{animate}
 \usepackage{listings}
 	\lstset{basicstyle=\scriptsize\ttfamily}
@@ -345,16 +346,16 @@
 
  \begin{frame}
  	\frametitle{Results}
-	Update animation!
+	Update Fly-in animation!
 	\centering
- 		\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.intro/104016}{0040}{0050}%
+ 		% \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.intro/104016}{0040}{0050}%
  \end{frame}
 
  \begin{frame}
 	 \frametitle{Results}
-	 Update animation!
+	 Update PJ animation!
  \centering
-		 \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/movie.104016_PJ/104016_PJ_00}{000}{236}%
+		 % \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/movie.104016_PJ/104016_PJ_00}{000}{236}%
  \end{frame}
 
  \begin{frame}
@@ -371,7 +372,6 @@
  	\includegraphics<9>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_09_ExtractedOtolithMasked}%
  	\only<10>{\href{https://htmlpreview.github.io/?https://github.com/habi/EAWAG-manuscript/blob/main/content/data/104016_Enterochromis_I_cinctus_St_E.head.rec.Otolith.Region.3D.html}{Exported 3D view}}%
  \end{frame}
-
 
  \subsection{Fish II}
  \renewcommand{\imageheight}{0.618\paperheight}% set global image height
@@ -397,31 +397,30 @@
  \note{The oxidative phosphorylation (OXPHOS) system is dynamic and the respiratory complexes (RCs) coexist with super-assembled quaternary structures called supercomplexes (SCs). How assembly occurs and the physiological role of supercomplex assembly is still under intensive investigation. The Cox7a family member Cox7a2l, also known as Scaf1, promotes CIII-CIV super assembly and energetic efficiency in zebrafish, mice, and humans. Here we studied the role of a second member of the Cox7a family, Cox7a1 in SC assembly and striated muscle physiology. We found that this protein drives CIV homodimer formation, which increases CIV activity. The substantial reduction in CIV2 formation led to a profound metabolic rearrangement with a consequent non-pathological loss of skeletal muscle performance and muscle mass not observed in cox7a2l. Ablation of Cox7a1 also rewired heart metabolism. While overall cardiac function was not affected, the absence of Cox7a1, but not Cox7a2l increased cardiac regenerative capacity. In sum, we describe a high specificity of Cox7a isoform in controlling OXPHOS assembly and muscle metabolism. While overall OXPHOS activity is modified, the loss of CIII-CIV heterodimer formation or CIV homodimer formation have very distinct metabolic and physiological consequences, highlighting the complexity of OXPHOS function and the importance of cox7a1 in striated muscle maturation.}
  \end{frame}
 
-
- \begin{frame}
-  \frametitle{Image analysis}
+\begin{frame}
+  \frametitle{Volumetry}
+	\begin{columns}
+		\begin{column}{0.5\linewidth}
 	\begin{itemize}
-	 	\item Large story
-	 	\item Cutting samples to equal length
-	 	\item Histogram already shows a difference
-	 	\item Thresholding
-	 	\item Volume counting
+	 	\item<1-> Cutting samples to equal length
+	 	\item<2-> Gray value histogram shows difference
+	 	\item<4-> Thresholding
+	 	\item<5-> Volume counting
+		\item<6->	\blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
 	 	\item What is the result: we see difference in volume, but \emph{not} in weight
 	 \end{itemize}
+	 \end{column}
+\begin{column}{0.5\linewidth}
   \centering
-  \includegraphics<1|handout:1>[height=\imageheight]{./media/cox7a/Overview}%
-  \includegraphics<2|handout:2>[height=\imageheight]{./media/cox7a/ko02_Cut}%
-  \includegraphics<3|handout:3>[height=\imageheight]{./media/cox7a/Histograms_Experiment}%
-  \includegraphics<4|handout:4>[height=\imageheight]{./media/cox7a/Volume_Boxplot}%
- \end{frame}
-
- \begin{frame}
- 	\frametitle{Image analysis}
- 	\centering
- 	\includegraphics<1|handout:1>[height=\imageheight]{./media/cox7a/Overview}%
- 	\includegraphics<2|handout:2>[height=\imageheight]{./media/cox7a/ko02_Cut}%
- 	\includegraphics<3|handout:3>[height=\imageheight]{./media/cox7a/Histograms_Experiment}%
- 	\includegraphics<4|handout:4>[height=\imageheight]{./media/cox7a/Volume_Boxplot}%
+	\includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5268C.png}\\%
+  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5269C.png}%
+	\includegraphics<2>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.png}%
+	\includegraphics<3>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.log.png}%
+	\includegraphics<4>[width=0.5\imagewidth]{./media/cox7a/histogram.5268C.png}%
+  \includegraphics<4>[width=0.5\imagewidth]{./media/cox7a/histogram.5269C.png}%
+	\includegraphics<5->[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.ThresholdedVolume.png}%
+\end{column}
+\end{columns}
  \end{frame}
 
 \begin{frame}[allowframebreaks]
