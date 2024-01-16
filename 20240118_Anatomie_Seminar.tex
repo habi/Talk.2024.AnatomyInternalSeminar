@@ -374,14 +374,13 @@
  \end{frame}
 
  \subsection{Fish II}
- \renewcommand{\imageheight}{0.618\paperheight}% set global image height
  \begin{frame}
  		\frametitle{More fish, but muscles}
  	\begin{columns}
  		\begin{column}{0.5\linewidth}
 			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber
  			\begin{itemize}
-				\item Influence of \emph{cox7a} on muscle volume
+				\item Influence of \emph{cox7a} on muscle volume~\hypercite{Mercader2024}
  				\item Confirmation of results by \uct
 				\item 2\(\times\)2\(\times\)5 Zebrafish, WT and KO
  			\end{itemize}
@@ -401,27 +400,37 @@
   \frametitle{Volumetry}
 	\begin{columns}
 		\begin{column}{0.5\linewidth}
+			\begin{itemize}
+				\item<1-> Cutting samples to equal length
+				\item<2-> Gray value histogram shows difference
+				\item<4-> Simple thresholding and volume counting
+				\item<5-> Segmentation
+				\item<6->	\blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\linewidth}
+			\centering
+			\includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5268C.png}\\%
+			\includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5269C.png}%
+			\includegraphics<2>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.png}%
+			\includegraphics<3>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.log.png}%
+			\includegraphics<4>[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.ThresholdedVolumeLargestComponent.png}%
+			\includegraphics<5>[width=0.5\imagewidth]{./media/cox7a/histogram.5268C.png}%
+			\includegraphics<5>[width=0.5\imagewidth]{./media/cox7a/histogram.5269C.png}%
+			\includegraphics<6>[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.SegmentedVolumemm3}%
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\section{Take home message}
+\begin{frame}
 	\begin{itemize}
-	 	\item<1-> Cutting samples to equal length
-	 	\item<2-> Gray value histogram shows difference
-	 	\item<4-> Thresholding
-	 	\item<5-> Volume counting
-		\item<6->	\blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
-	 	\item What is the result: we see difference in volume, but \emph{not} in weight
-	 \end{itemize}
-	 \end{column}
-\begin{column}{0.5\linewidth}
-  \centering
-	\includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5268C.png}\\%
-  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5269C.png}%
-	\includegraphics<2>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.png}%
-	\includegraphics<3>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.log.png}%
-	\includegraphics<4>[width=0.5\imagewidth]{./media/cox7a/histogram.5268C.png}%
-  \includegraphics<4>[width=0.5\imagewidth]{./media/cox7a/histogram.5269C.png}%
-	\includegraphics<5->[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.ThresholdedVolume.png}%
-\end{column}
-\end{columns}
- \end{frame}
+		\item \uct provides insights into samples not otherwise possible
+		\item Unbiased segmentation
+		\item Simple algorithms lead to nice data
+		\item Ask anything!
+	\end{itemize}
+\end{frame}
 
 \begin{frame}[allowframebreaks]
 	\frametitle{References}
