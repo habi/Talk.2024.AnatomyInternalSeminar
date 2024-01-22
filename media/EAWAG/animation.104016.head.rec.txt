@@ -1,0 +1,105 @@
+// Start
+// General setup
+At frame 0:
+- change scalebar visibility to off  
+- change bounding box visibility to off // Recorded transition
+// Full ROI
+At frame 0:
+- change all channels' bounding box x to (0.0, 1488.0)
+- change all channels' bounding box y to (0.0, 999.0)
+- change all channels' bounding box z to (0.0, 1889.0)
+- change all channels' front/back clipping to (-1278.0, 1278.0)
+// Original light
+At frame 0:
+- change channel 1 intensity to (0.0, 74.0, 1.0)
+- change channel 1 alpha to (0.0, 124.0, 2.0)
+- change channel 1 color to (217.0, 217.0, 217.0)
+- change channel 1 lookup table to fixed channel color
+- change channel 1 light to (1.0, 0.20000000298023224, 0.20000000298023224, 5.0)
+- change channel 1 lighting to on
+- change channel 1 weight to 1.0
+- change rendering algorithm to independent transparency
+- change background color to (255.0, 255.0, 255.0)
+// Start position
+At frame 0:
+- reset transformation
+- rotate by 110.6 degrees vertically
+- rotate by -85.6 degrees around (0, 0, 1)
+- rotate by -164.3 degrees horizontally
+- zoom by a factor of 1.0
+- translate by (241.4, -207.6, 0.0)
+
+// Move to OJ
+From frame 0 to frame 240:
+- rotate by 21.0 degrees vertically
+- rotate by -12.3 degrees around (0, 0, 1)
+- rotate by -31.7 degrees horizontally
+- zoom by a factor of 3.5
+- translate by (1247.8, -1003.2, -136.0)
+// Move to OJ, refined
+From frame 100 to frame 240:
+- rotate by -11.1 degrees vertically
+- rotate by -14.6 degrees around (0, 0, 1)
+- rotate by -49.8 degrees horizontally
+- zoom by a factor of 1.3
+- translate by (-686.0, 211.6, -1744.1)
+
+// Move and crop to PJ
+From frame 300 to frame 540:
+- rotate by -21.2 degrees vertically
+- rotate by 8.5 degrees around (0, 0, 1)
+- rotate by 9.6 degrees horizontally
+- zoom by a factor of 0.5
+- translate by (-354.6, 773.4, -413.6)
+// Record contrast
+- change channel 1 intensity to (0.0, 75.0, 1.0)
+- change channel 1 alpha to (0.0, 100.0, 3.0)
+- change channel 1 color to (217.0, 217.0, 217.0)
+- change channel 1 lookup table to fixed channel color
+- change channel 1 light to (1.0, 0.20000000298023224, 0.20000000298023224, 5.0)
+- change channel 1 lighting to on
+- change channel 1 weight to 1.0
+- change rendering algorithm to independent transparency
+- change background color to (255.0, 255.0, 255.0)
+// Record cropping
+- change all channels' bounding box x to (387.0, 700.0)
+- change all channels' bounding box y to (238.0, 633.0)
+- change all channels' bounding box z to (922.0, 1280.0)
+- change all channels' front/back clipping to (-1278.0, 1278.0)
+
+// PJ view for segmented PJ
+From frame 600 to frame 840:
+- rotate by 25.2 degrees vertically
+- rotate by -11.8 degrees around (0, 0, 1)
+- rotate by -5.0 degrees horizontally
+- zoom by a factor of 0.8
+- translate by (60.6, 171.7, 149.4)
+
+// Recorded transition
+From frame 900 to frame 1140:
+- rotate by 90.0 degrees around (0, 0, 1)
+- rotate by -28.0 degrees horizontally
+- zoom by a factor of 0.5
+- translate by (-79.8, 0.4, -41.4)
+// Full ROI
+- change all channels' bounding box x to (0.0, 1488.0)
+- change all channels' bounding box y to (0.0, 999.0)
+- change all channels' bounding box z to (0.0, 1889.0)
+- change all channels' front/back clipping to (-1278.0, 1278.0)
+// Original light
+- change channel 1 intensity to (0.0, 74.0, 1.0)
+- change channel 1 alpha to (0.0, 124.0, 2.0)
+- change channel 1 color to (217.0, 217.0, 217.0)
+- change channel 1 lookup table to fixed channel color
+- change channel 1 light to (1.0, 0.20000000298023224, 0.20000000298023224, 5.0)
+- change channel 1 lighting to on
+- change channel 1 weight to 1.0
+- change rendering algorithm to independent transparency
+- change background color to (255.0, 255.0, 255.0)
+// Start position
+- reset transformation
+- rotate by 110.6 degrees vertically
+- rotate by -85.6 degrees around (0, 0, 1)
+- rotate by -164.3 degrees horizontally
+- zoom by a factor of 1.0
+- translate by (241.4, -207.6, 0.0)
