@@ -77,51 +77,52 @@
   {\usebeamerfont{date}\insertdate\par}
   \vspace*{\stretch{2}}
   \end{list}
+%  \end{minipage}
 }
 
 \defbeamertemplate*{background canvas}{uni bern}{%
-  \begin{minipage}[t]{\paperwidth+10pt}%
-    \setlength{\baselineskip}{0pt}%
-    \setlength{\lineskip}{-\beamer@ubOverlap}%
-    \setlength{\parskip}{0pt}%
-    \ifnumgreater{\c@framenumber}{0}{%
-      \raisebox{-\height-2\beamer@ubBorderHeight}[0pt][0pt]{\hspace*{0.86\paperwidth}\includegraphics[width=0.125\paperwidth]{./media/ublogo.pdf}}%
-      }{}% empty line below is needed, otherwise the ublogo.pdf is not shown after the title page
+\begin{minipage}[t]{\paperwidth+10pt}
+   \setlength{\baselineskip}{0pt}
+   \setlength{\lineskip}{-\beamer@ubOverlap}
+   \setlength{\parskip}{0pt}
+   \ifnumgreater{\c@framenumber}{1}{
+    \raisebox{-\height-2\beamer@ubBorderHeight}[0pt][0pt]{\hspace*{0.86\paperwidth}\includegraphics[width=0.125\paperwidth]{./media/ublogo.pdf}}
+   }{}%
 
-    \ifnumgreater{\c@framenumber}{0}{%
-      \ifdefempty{\insertframesubtitle}{%
-        \rule{0pt}{6ex+\beamer@ubTitleHeight}\\%
-        \color{ubGrey}\rule{\paperwidth}{\paperheight-\beamer@ubTitleHeight-\beamer@ubFooterHeight-6ex}%
-      }{%
-        \rule{0pt}{6ex+2\beamer@ubTitleHeight}\\
-        \color{ubGrey}\rule{\paperwidth}{\paperheight-2\beamer@ubTitleHeight-\beamer@ubFooterHeight-6ex}%
-      }%
-    }{}%
-  \end{minipage}%
+   \ifnumgreater{\c@framenumber}{1}{
+        \ifdefempty{\insertframesubtitle}{
+          \rule{0pt}{6ex+\beamer@ubTitleHeight}\\
+          \color{ubGrey}\rule{\paperwidth}{\paperheight-\beamer@ubTitleHeight-\beamer@ubFooterHeight-6ex}
+        }{
+          \rule{0pt}{6ex+2\beamer@ubTitleHeight}\\
+          \color{ubGrey}\rule{\paperwidth}{\paperheight-2\beamer@ubTitleHeight-\beamer@ubFooterHeight-6ex}
+        }
+   }{}
+  \end{minipage}
 }
 
 \defbeamertemplate*{headline}{uni bern}{%
-    \ifnumgreater{\c@framenumber}{0}{%
-      \vspace{3.5ex}%
-      \hspace{4ex}\inserttitle%
-    }{}%
+    \ifnumgreater{\c@framenumber}{1}{
+      \vspace{3.5ex}
+      \hspace{4.5ex}\inserttitle
+    }{}
 }
 
-\defbeamertemplate*{frametitle}{uni bern}{%
-  \begin{minipage}[b]{\textwidth}%
-    \vspace{0.5ex}%
-    \raggedright%
-    \vspace{3.5ex}%
-    {\insertframetitle\par}%
-    {\usebeamerfont{framesubtitle}\usebeamercolor*{framesubtitle}\insertframesubtitle}%
-  \end{minipage}%
+\defbeamertemplate*{frametitle}{uni bern}{
+\begin{minipage}[b]{\textwidth}
+\vspace{0.5ex}
+\raggedright
+\vspace{1.0ex}
+{\insertframetitle\par}
+{\usebeamerfont{framesubtitle}\usebeamercolor*{framesubtitle}\insertframesubtitle}
+\end{minipage}
 }
 
 % set bullets
-\defbeamertemplate*{itemize item}{uni bern}{$\bullet$}%
-\defbeamertemplate*{itemize subitem}{uni bern}{$\bullet$}%
-\setbeamersize{text margin left=4ex}%
-\setbeamersize{text margin right=4ex}%
+\defbeamertemplate*{itemize item}{uni bern}{$\bullet$}
+\defbeamertemplate*{itemize subitem}{uni bern}{$\bullet$}
+\setbeamersize{text margin left=4ex}
+\setbeamersize{text margin right=4ex}
 
 % \AtBeginDocument{
 %   \begin{frame}
