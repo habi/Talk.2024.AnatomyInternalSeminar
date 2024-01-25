@@ -311,7 +311,7 @@
 	\frametitle{Many more teeth, but from Cichlids}
 			\begin{columns}
 			\begin{column}{0.5\linewidth}
-		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}
+		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\hypercite{Haberthuer2023}
 		\begin{itemize}
  		 		 	\item 133 Cichlids from Lake Victoria, East Africa
 					\begin{itemize}
@@ -323,7 +323,7 @@
 						\item<7-> Voxelsizes from \qtyrange{3.5}{50}{\micro\meter}
 		 				\item<7-> 46 days of scanning time
 		 				\item<7-> \qty{9.8}{\tera\byte} of raw data
-						\item<7-> \qty{1.5}{\tera\byte}/+\num{1000000} reconstructions
+		 				\item<7-> \qty{1.5}{\tera\byte}/+\num{1000000} reconstructions
 		 			\end{itemize}
 		 		\end{itemize}
 			\end{column}
@@ -343,19 +343,25 @@
 		\end{columns}
 \end{frame}
 
- \begin{frame}
- 	\frametitle{Results}
-	Update Fly-in animation!
+\begin{frame}
+	\frametitle{Head}
 	\centering
- 		% \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.intro/104016}{0040}{0050}%
- \end{frame}
+		\only<1>{%
+			\animategraphics[autoplay,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.0}{000}{280}%
+		}%
+		\only<2>{%
+			\animategraphics[autoplay,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.0}{281}{580}%
+		}%
+		\only<3>{%
+			\animategraphics[autoplay,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.0}{581}{888}%
+		}%
+\end{frame}
 
- \begin{frame}
-	 \frametitle{Results}
-	 Update PJ animation!
- \centering
-		 % \animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/movie.104016_PJ/104016_PJ_00}{000}{236}%
- \end{frame}
+\begin{frame}
+	\frametitle{Pharyngeal jaw}
+	\centering
+	\animategraphics[autoplay,loop,height=\imageheight,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016_PJcrop.masked.}{0000}{0360}%
+\end{frame}
 
 \begin{frame}
 	\frametitle{Data wrangling by example: Cichlids}
@@ -377,9 +383,9 @@
  		\frametitle{More fish, but muscles}
  	\begin{columns}
  		\begin{column}{0.5\linewidth}
-			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber
+			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber~\hypercite{Mercader2024}
  			\begin{itemize}
-				\item Influence of \emph{cox7a} on muscle volume~\hypercite{Mercader2024}
+				\item Influence of \emph{cox7a} on muscle volume
  				\item Confirmation of results by \uct
 				\item 2\(\times\)2\(\times\)5 Zebrafish, WT and KO
  			\end{itemize}
