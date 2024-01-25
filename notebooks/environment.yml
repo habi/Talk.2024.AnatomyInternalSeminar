@@ -7,7 +7,7 @@ dependencies:
   - imageio
   - scikit-image
   - pandas
-  - matplotlib<=3.7
+  - matplotlib
   - matplotlib-scalebar
   - seaborn
   - statsmodels
