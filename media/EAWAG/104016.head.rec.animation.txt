@@ -19,7 +19,7 @@ At frame 0:
 - change channel 1 lighting to on
 - change channel 1 weight to 1.0
 - change rendering algorithm to independent transparency
-- change background color to (255.0, 255.0, 255.0)
+- change background color to (217.0, 217.0, 217.0)
 // Start position
 At frame 0:
 - reset transformation
@@ -60,7 +60,7 @@ From frame 300 to frame 540:
 - change channel 1 lighting to on
 - change channel 1 weight to 1.0
 - change rendering algorithm to independent transparency
-- change background color to (255.0, 255.0, 255.0)
+- change background color to (217.0, 217.0, 217.0)
 // Record cropping
 - change all channels' bounding box x to (387.0, 700.0)
 - change all channels' bounding box y to (238.0, 633.0)
@@ -95,7 +95,7 @@ From frame 900 to frame 1140:
 - change channel 1 lighting to on
 - change channel 1 weight to 1.0
 - change rendering algorithm to independent transparency
-- change background color to (255.0, 255.0, 255.0)
+- change background color to (217.0, 217.0, 217.0)
 // Start position
 - reset transformation
 - rotate by 110.6 degrees vertically
