@@ -1,6 +1,6 @@
 # Talk.2024.AnatomyInternalSeminar
 
-My talk for the internal seminar at the Institute of Anatomy on January 18, 2024.
+My talk for the internal seminar at the Institute of Anatomy on September 19, 2024.
 
 [The last time](https://github.com/habi/Talk.2020.AnatomyInternalSeminar), I spoke about many human teeth.
 This time, I'm speaking about *many* more teeth, but from fishes.
