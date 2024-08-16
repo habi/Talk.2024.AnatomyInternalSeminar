@@ -51,6 +51,8 @@
 % \usepackage{ccicons}
 \usepackage{fontawesome5}
 \usepackage{csquotes}
+\usepackage{multicol}
+
 
 \usepackage{listings}
 	\lstset{basicstyle=\scriptsize\ttfamily}
@@ -229,8 +231,8 @@
 
 \begin{frame}
 	\frametitle{\uct-group}
-	\begin{columns}
-		\begin{column}{0.62\textwidth}
+	\begin{multicols}{2}
+		\raggedcolumns
 			\begin{itemize}
 				\item microangioCT~\cite{Hlushchuk2018}
 				\begin{itemize}
@@ -242,33 +244,33 @@
 				\item Collaborations with museums~\cite{Bochud2021} and scientist at UniBe~\cite{Halm2021,Kadlag2023} to scan a wide range of specimens, from human hearing bones to meteorites
 				\item Automate \emph{all} the things!~\cite{Haberthuer2021,Haberthuer2023}
 			\end{itemize}
-		\end{column}%
-		\begin{column}{0.38\textwidth}%
-			\centering%
+			\columnbreak%
+			\vfill%
 			\includegraphics<1>[width=\imagewidth]{./media/1172}%
 			\only<1>{\source{brukersupport.com}{}}%
+			\vfill%
 			\includegraphics<2>[width=\imagewidth]{./media/1272}%
 			\only<2>{\source{bruker.com/skyscan1272}{}}%
+			\vfill%
 			\includegraphics<3>[width=\imagewidth]{./media/2214}%
 			\only<3>{\source{bruker.com/skyscan2214}{}}%
-		\end{column}%
-	\end{columns}%
+			\vfill%
+		\end{multicols}%
 \end{frame}
 
 \section{Retrospection about teeth}
 \begin{frame}
 	\frametitle{Internal morphology of human teeth}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\hypercite{Haberthuer2021},~\hypercite{Wolf2021}
+	\begin{multicols}{2}
+			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\cite{Haberthuer2021},~\cite{Wolf2021}
+			HYPERCITE
 			\begin{itemize}
 				\item 104 extracted human permanent mandibular canines
 				\item Segmentation of teeth and root canal
 				\item Numbers instead of just pretty images, unbiased characterization
 				\item Reproducible and automated image analysis with \href{https://www.python.org/}{\faPython} in \href{https://jupyter.org/}{Jupyter}~\cite{Kluyver2016}
 			\end{itemize}
-		\end{column}%
-		\begin{column}{0.5\textwidth}%
+		\columnbreak
 			\centering%
 			\renewcommand{\imagewidth}{0.7\linewidth}
 			\only<1>{%
@@ -283,23 +285,24 @@
 			\end{tikzpicture}%
 			}%
 			\renewcommand{\imagewidth}{\columnwidth}
-		\end{column}%
-	\end{columns}%
- \only<2>{
+		\only<2>{
 	 	\begin{tikzpicture}[remember picture,overlay]%
 	 	\node at (current page.center) [shift={(0,-25pt)}]{%
 	 	\animategraphics[autoplay,loop,width=\paperwidth,every=\everyframe]{24}{./media/ZMK/tooth045/transparent-slices-rcs/image0}{000}{457}%
 	 		};%
 	 \end{tikzpicture}%
 	 }
+	\end{multicols}%
 \end{frame}
 
 \section{Cichlids}
 \begin{frame}
 	\frametitle{Many more teeth, but from Cichlids}
-			\begin{columns}
-			\begin{column}{0.5\linewidth}
-		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\hypercite{Haberthuer2023}
+	\begin{multicols}{2}
+			%\begin{columns}
+			%\begin{column}{0.55\linewidth}
+			Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\cite{Haberthuer2023}
+			HYPERCITE
 		\begin{itemize}
  		 		 	\item 133 Cichlids from Lake Victoria, East Africa
 					\begin{itemize}
@@ -314,8 +317,9 @@
 		 				\item<7-> \qty{1.5}{\tera\byte}/+\num{1000000} reconstructions
 		 			\end{itemize}
 		 		\end{itemize}
-			\end{column}
-			\begin{column}{0.5\linewidth}
+				\columnbreak
+			%\end{column}
+			%\begin{column}{0.45\linewidth}
 				\centering
 				\only<1>{%
 					\includegraphics[width=\imagewidth]{./media/EAWAG/journal.pone.0291003.g001.png}%
@@ -327,8 +331,9 @@
 				\includegraphics<5>[width=\imagewidth]{./media/EAWAG/lengths.boxenplot.png}%
 				\includegraphics<6>[width=\imagewidth]{./media/EAWAG/lengths.boxenplot.only.png}%
 				\includegraphics<7>[width=\imagewidth]{./media/EAWAG/voxelsizes.png}%
-			\end{column}
-		\end{columns}
+			%\end{column}
+		%\end{columns}
+	\end{multicols}
 \end{frame}
 
 \begin{frame}
