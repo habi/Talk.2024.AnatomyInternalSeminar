@@ -13,7 +13,7 @@
 % Some often used abbreviations/commands
 \newcommand{\everyframe}{33}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
-\newcommand{\imageheight}{0.618\paperheight}% set global image height
+\newcommand{\imageheight}{0.5\paperheight}% set global image height
 \newlength\imagescale% needed for scalebars
 \newcommand{\uct}{{\textmu}CT\xspace}% make our life easier
 \newcommand{\eg}{e.\,g.\xspace}%
@@ -21,20 +21,22 @@
 
 \usepackage[%
 	backend=biber,
-   	style=ieee,
-	url=false,
-	isbn=false,
-    	citetracker=true,
+	sorting=none,
+	%style=alpha,%
+	%url=false,%
+	%isbn=false,%
+	%maxbibnames=1,%
+	citetracker=true
     ]{biblatex}
-\addbibresource{../../Documents/library.bib} % FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
+\addbibresource{../../Documents/library.bib}% FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
 \usepackage{tikz}
 	\usetikzlibrary{shadows,spy}
 	\tikzset{shadowed/.style={preaction={transform canvas={shift={(1pt,-1pt)}},draw=ubRed}}}
 \usepackage{shadowtext}
 	\shadowoffset{1pt}
 	\shadowcolor{ubRed}
-% \usepackage{pgfplots}
-% 	\pgfplotsset{compat=newest}
+\usepackage{pgfplots}
+	\pgfplotsset{compat=newest}
 \usepackage{microtype}
 \usepackage[detect-all=true,
 	range-phrase=--,
@@ -45,10 +47,9 @@
 % \usepackage[absolute,overlay]{textpos}
 % \usepackage[showseconds=false,showzone=false]{datetime2}
 % \usepackage{gitinfo2}
-% \usepackage{xspace}
+\usepackage{xspace}
 % \usepackage{ccicons}
-% \usepackage{fontawesome5}
-% % \usepackage[version=4]{mhchem}
+\usepackage{fontawesome5}
 \usepackage{csquotes}
 
 \usepackage{listings}
@@ -78,7 +79,6 @@
 % \usepackage{booktabs}
 % \usepackage{colortbl}
 % \usepackage{mathastext}
-% \usepackage{lipsum}
 
 % change tikz font to slide font
 % https://tex.stackexchange.com/a/33329/828
@@ -156,46 +156,44 @@
 		}%
 	}%
 
-% % References as footnotes at the bottom of the slides
-% % https://tex.stackexchange.com/a/368760/828
+% % % References as footnotes at the bottom of the slides
+% % % https://tex.stackexchange.com/a/368760/828
 % \makeatletter
 % \renewcommand\@makefnmark{\xspace\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]}}
 % \renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}
 % \makeatother
 
-% Command for citing at the bottom
-\makeatletter
-\newbibmacro*{hypercite}{%
-  \renewcommand{\@makefntext}[1]{\noindent\normalfont##1}%
-  [\printfield{labelnumber}]\footnotetext{%
-    \blxmkbibnote{foot}{%
-    \printtext[labelnumberwidth]{%
-      \printfield{prefixnumber}%
-      \printfield{labelnumber}}%
-    \addspace
-    \fullcite{\thefield{entrykey}}}}}
-\DeclareCiteCommand{\hypercite}%
-  {\usebibmacro{cite:init}}
-  {\usebibmacro{hypercite}}
-  {}
-  {\usebibmacro{cite:dump}}
-\makeatother
+% % Command for citing at the bottom
+% \makeatletter
+% \newbibmacro*{hypercite}{%
+%   \renewcommand{\@makefntext}[1]{\noindent\normalfont##1}%
+%   [\printfield{labelnumber}]\footnotetext{%
+%     \blxmkbibnote{foot}{%
+% 		\printtext[labelnumberwidth]{\printfield{prefixnumber}\printfield{labelnumber}}%
+%     \addspace%
+%     \fullcite{\thefield{entrykey}}}}}
+% \DeclareCiteCommand{\hypercite}%
+%   {\usebibmacro{cite:init}}
+%   {\usebibmacro{hypercite}}
+%   {}
+%   {\usebibmacro{cite:dump}}
+% \makeatother
 
-% Reset footnote counter for every frame
-\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
-% Since we're using \footfullcite a lot, we remove most items to show from the citations, to keep the frames as clean as possible
-\AtEveryCitekey{\clearfield{title}}
-\AtEveryCitekey{\clearfield{journaltitle}}
-% No "In:" http://tex.stackexchange.com/a/10686/828
-\renewbibmacro{in:}{}
-\AtEveryCitekey{\clearfield{volume}}
-\AtEveryCitekey{\clearfield{number}}
-\AtEveryCitekey{\clearfield{year}}
-% No parentheses around the (now empty) year: https://tex.stackexchange.com/a/147537/828
-\renewcommand{\bibopenparen}{\addcomma\addspace}
-\renewcommand{\bibcloseparen}{\addcomma\addspace}
-\AtEveryCitekey{\clearfield{pages}}
-\AtEveryCitekey{\clearfield{issn}}
+% % Reset footnote counter for every frame
+% \AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
+% % Since we're using \footfullcite a lot, we remove most items to show from the citations, to keep the frames as clean as possible
+% \AtEveryCitekey{\clearfield{title}}
+% \AtEveryCitekey{\clearfield{journaltitle}}
+% % No "In:" http://tex.stackexchange.com/a/10686/828
+% \renewbibmacro{in:}{}
+% \AtEveryCitekey{\clearfield{volume}}
+% \AtEveryCitekey{\clearfield{number}}
+% \AtEveryCitekey{\clearfield{year}}
+% % No parentheses around the (now empty) year: https://tex.stackexchange.com/a/147537/828
+% \renewcommand{\bibopenparen}{\addcomma\addspace}
+% \renewcommand{\bibcloseparen}{\addcomma\addspace}
+% \AtEveryCitekey{\clearfield{pages}}
+% \AtEveryCitekey{\clearfield{issn}}
 
 \begin{document}
 \begin{frame}
@@ -218,25 +216,17 @@
 \section{Introduction}
 \begin{frame}
 	\frametitle{Grüessech from the \uct-group}
-	\centering
-	\includegraphics[height=\imageheight]{./media/team}
-		\begin{columns}
-		\hfill\begin{column}{0.33\textwidth}
-			\centering%
-			David{\color{ubRed}.}Haberthuer{\color{ubRed}@unibe.ch}%
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\centering%
-			Ruslan{\color{ubRed}.}Hlushchuk{\color{ubRed}@unibe.ch}%
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\centering%
-			Oleksiy{\color{ubRed}.}Khoma{\color{ubRed}@unibe.ch}%
-		\end{column}\hfill%
-	\end{columns}
+	\centering%
+	\includegraphics[width=\imagewidth]{./media/team}%
+	\hfill%
+	David{\color{ubRed}.}Haberthuer{\color{ubRed}@unibe.ch}%
+	\hfill%
+	Ruslan{\color{ubRed}.}Hlushchuk{\color{ubRed}@unibe.ch}%
+	\hfill%
+	Oleksiy{\color{ubRed}.}Khoma{\color{ubRed}@unibe.ch}%
+	\hfill%
 \end{frame}
 
-\renewcommand{\imagewidth}{\columnwidth}
 \begin{frame}
 	\frametitle{\uct-group}
 	\begin{columns}
