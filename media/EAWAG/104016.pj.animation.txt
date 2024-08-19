@@ -11,15 +11,15 @@ At frame 0:
 - change all channels' front/back clipping to (-898.1622924804688, 898.1622924804688)
 // Original light
 At frame 0:
-- change channel 1 intensity to (0.0, 74.0, 1.0)
-- change channel 1 alpha to (0.0, 124.0, 2.0)
-- change channel 1 color to (217.0, 217.0, 217.0)
+- change channel 1 intensity to (0.0, 128.0, 1.0)
+- change channel 1 alpha to (0.0, 100.0, 2.0)
+- change channel 1 color to (255.0, 255.0, 255.0)
 - change channel 1 lookup table to fixed channel color
-- change channel 1 light to (1.0, 0.20000000298023224, 0.20000000298023224, 5.0)
+- change channel 1 light to (1.0, 0.2, 0.2, 5.0)
 - change channel 1 lighting to on
 - change channel 1 weight to 1.0
 - change rendering algorithm to independent transparency
-- change background color to (217.0, 217.0, 217.0)
+- change background color to (255.0, 255.0, 255.0)
 // Rotate tip down
 - rotate by 90.0 degrees vertically
 - rotate by -45.0 degrees around (0, 0, 1)
