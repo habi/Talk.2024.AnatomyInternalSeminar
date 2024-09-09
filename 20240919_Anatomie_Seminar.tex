@@ -13,7 +13,7 @@
 % Some often used abbreviations/commands
 \newcommand{\everyframe}{33}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
-\newcommand{\imageheight}{0.5\paperheight}% set global image height
+\newcommand{\imageheight}{0.7\paperheight}% set global image height
 \newlength\imagescale% needed for scalebars
 \newcommand{\uct}{{\textmu}CT\xspace}% make our life easier
 \newcommand{\eg}{e.\,g.\xspace}%
@@ -357,18 +357,13 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Data wrangling by example: Cichlids}
+	\frametitle{Upcoming results}
 	\centering
-	\includegraphics<1>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_01_Overview}%
-	\includegraphics<2>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_02_GrayValues}%
-	\includegraphics<3>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_03_GrayValuesRegion}%
-	\includegraphics<4>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_04_GrayValuesSmoothed}%
-	\includegraphics<5>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_05_Peaks}%
-	\includegraphics<6>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_06_Peaks_All}%
-	\includegraphics<7>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_07_ExtractedRegions}%
-	\includegraphics<8>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_08_ExtractedRegionsMIPs}%
-	\includegraphics<9>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_09_ExtractedOtolithMasked}%
-	\only<10>{\href{https://htmlpreview.github.io/?https://github.com/habi/EAWAG-manuscript/blob/main/content/data/104016_Enterochromis_I_cinctus_St_E.head.rec.Otolith.Region.3D.html}{Exported 3D view}}%
+	\includegraphics[height=\imageheight]{./media/EAWAG/3 PCA PC1vPC2 all specimens by diet}
+	\source{Kassandra Ford}{}
+	\note{Here are two figures; you are welcome to use either for an internal talk.
+	One is a PCA with the individuals labeled by diet category, the other is a phylomorphospace, showing the same PCA but with additional phylogenetic data, again labeled by diet category.
+	This is based on a 25-point landmark scheme on 1/2 of the head.}
 \end{frame}
 
 \subsection{Fish II}
