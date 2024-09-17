@@ -11,8 +11,8 @@ At frame 0:
 - change all channels' front/back clipping to (-898.1622924804688, 898.1622924804688)
 // Original light
 At frame 0:
-- change channel 1 intensity to (0.0, 128.0, 1.0)
-- change channel 1 alpha to (0.0, 100.0, 2.0)
+- change channel 1 intensity to (0.0, 255.0, 1.0)
+- change channel 1 alpha to (0.0, 200.0, 2.0)
 - change channel 1 color to (255.0, 255.0, 255.0)
 - change channel 1 lookup table to fixed channel color
 - change channel 1 light to (1.0, 0.2, 0.2, 5.0)
@@ -22,15 +22,43 @@ At frame 0:
 - change background color to (255.0, 255.0, 255.0)
 // Rotate tip down
 - rotate by 90.0 degrees vertically
-- rotate by -45.0 degrees around (0, 0, 1)
+- rotate by -80.0 degrees around (0, 0, 1)
 - rotate by 90.0 degrees horizontally
-- translate by (0.0, 0.0, 0.0)
+- translate by (0.0, -100.0, 0.0)
+- zoom by a factor of 1.4
 
-From frame 0 to frame 120:
-- rotate by -20 degrees around (1, 0, 0)
+// Recorded transition
+From frame 0 to frame 20:
+- rotate by -45.0 degrees vertically
+- rotate by -45.0 degrees around (0, 0, 1)
+- rotate by 70.0 degrees horizontally
+- translate by (-75.0, -75.0, -100.0)
 
-From frame 0 to frame 360:
-- rotate by 360 degrees horizontally ease-in-out 
-
-From frame 240 to frame 360:
-- rotate by 20 degrees around (1, 0, 0)
+// Recorded transition
+From frame 21 to frame 40:
+- rotate by 12.0 degrees vertically
+- rotate by -4.0 degrees horizontally
+- zoom by a factor of 2.5
+- translate by (-116.2, 53.7, 76.4)
+// Recorded transition
+From frame 41 to frame 60:
+- rotate by 24.5 degrees vertically
+- rotate by 31.4 degrees around (0, 0, 1)
+- rotate by 110.3 degrees horizontally
+- zoom by a factor of 0.5
+- translate by (66.4, 48.6, -6.1)// Recorded transition
+// Go back to start
+From frame 61 to frame 80:
+- rotate by 7.8 degrees vertically
+- rotate by 17.9 degrees around (0, 0, 1)
+- rotate by 51.0 degrees horizontally
+- zoom by a factor of 0.8
+- translate by (116.1, -107.3, 26.4)
+- rotate by -43.5 degrees vertically
+- rotate by 38.5 degrees around (0, 0, 1)
+- rotate by 136.1 degrees horizontally
+- translate by (19.9, -114.8, 213.8)
+- rotate by 13.6 degrees vertically
+- rotate by 7.2 degrees around (0, 0, 1)
+- rotate by -7.0 degrees horizontally
+- translate by (0.8, 39.9, 34.6)

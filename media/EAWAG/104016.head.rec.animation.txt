@@ -9,8 +9,8 @@ At frame 0:
 - change all channels' bounding box z to (0.0, 1889.0)
 - change all channels' front/back clipping to (-1278.0, 1278.0)
 // Original light
-- change channel 1 intensity to (0.0, 200.0, 1.0)
-- change channel 1 alpha to (0.0, 240.0, 2.0)
+- change channel 1 intensity to (0.0, 222.0, 1.0)
+- change channel 1 alpha to (0.0, 196.0, 2.0)
 - change channel 1 color to (255.0, 255.0, 255.0)
 - change channel 1 lookup table to fixed channel color
 - change channel 1 light to (1.0, 0.2, 0.2, 5.0)
@@ -54,7 +54,7 @@ From frame 50 to frame 70:
 - translate by (2.8, 494.7, 4.2)
 - change channel 1 intensity to (58.0, 106.0, 1.0)
 - change channel 1 alpha to (13.0, 255.0, 2.0)
-// Transition to PJ position
+// Transition to position where we can see the PJ nicely
 From frame 75 to frame 95:
 - rotate by 1.7 degrees vertically
 - rotate by -0.1 degrees around (0, 0, 1)
@@ -65,14 +65,25 @@ From frame 75 to frame 95:
 - change all channels' bounding box y to (210.0, 668.0)
 - change all channels' bounding box z to (943.0, 1506.0)
 - change all channels' front/back clipping to (-1278.0, 1278.0)
-//From frame 100 to frame 120:
+// From frame 100 to frame 120:
 - change all channels' bounding box x to (435.0, 709.0)
 - change all channels' bounding box y to (220.0, 634.0)
 - change all channels' bounding box z to (979.0, 1297.0)
 - change all channels' front/back clipping to (237.0, 1278.0)// Recorded transition
-//From frame 120 to frame 140:
+// From frame 120 to frame 140:
 - rotate by 33.5 degrees vertically
 - rotate by 0.0 degrees around (0, 0, 1)
 - rotate by -0.0 degrees horizontally
 - zoom by a factor of 0.8
 - translate by (183.7, 222.3, 168.2)
+// Transition to position that corresponds to second animation
+From frame 100 to frame 105:
+- rotate by -30.0 degrees vertically
+- rotate by 0.0 degrees around (0, 0, 1)
+- rotate by 0.0 degrees horizontally
+- zoom by a factor of 1.4
+- translate by (-4.0, -306.4, -1.1)
+- change all channels' bounding box x to (435.0, 709.0)
+- change all channels' bounding box y to (221.0, 652.0)
+- change all channels' bounding box z to (971.0, 1292.0)
+- change all channels' front/back clipping to (23.0, 1200.0)
