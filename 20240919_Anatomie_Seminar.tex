@@ -126,8 +126,8 @@
 		}%
 	}%
 
-% % % References as footnotes at the bottom of the slides
-% % % https://tex.stackexchange.com/a/368760/828
+% References as footnotes at the bottom of the slides
+% https://tex.stackexchange.com/a/368760/828
 \makeatletter
 \renewcommand\@makefnmark{\xspace\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]}}
 \renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}
@@ -170,32 +170,31 @@
 	\maketitle
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Grüessech mitenang!}
-% 	\begin{itemize}
-% 		\item David Haberthür
-% 		\begin{itemize}
-% 			\item Physicist by trade
-% 			\item \href{https://boris.unibe.ch/2619/}{PhD in high resolution imaging of the lung}, Institute of Anatomy, University of Bern, Switzerland
-% 			\item Post-Doc I: \href{https://www.psi.ch/sls/tomcat/}{TOMCAT}, \href{https://www.psi.ch/sls/}{Swiss Light Source}, \href{https://www.psi.ch/}{Paul Scherrer Institute}, Switzerland
-% 			\item Post-Doc II/Technisch-wissenschaftliche Arbeit 1: \uct group, Institute of Anatomy, University of Bern, Switzerland.
-% 		\end{itemize}
-% 	\end{itemize}
-% \end{frame}
+ \begin{frame}
+	\frametitle{Grüessech mitenang!}
+	\begin{itemize}
+		\item David Haberthür
+		\begin{itemize}
+			\item Physicist by trade
+			\item \href{https://boris.unibe.ch/2619/}{PhD in high resolution imaging of the lung}, Institute of Anatomy, University of Bern, Switzerland
+			\item Post-Doc I: \href{https://www.psi.ch/sls/tomcat/}{TOMCAT}, \href{https://www.psi.ch/sls/}{Swiss Light Source}, \href{https://www.psi.ch/}{Paul Scherrer Institute}, Switzerland
+			\item Post-Doc II/Technisch-wissenschaftliche Arbeit 1: \uct group, Institute of Anatomy, University of Bern, Switzerland.
+		\end{itemize}
+	\end{itemize}
+ \end{frame}
 
-% \section{Introduction}
-% \begin{frame}
-% 	\frametitle{Grüessech from the \uct-group}
-% 	\centering%
-% 	\includegraphics[width=\imagewidth]{./media/team}%
-% 	\hfill%
-% 	David{\color{ubRed}.}Haberthuer{\color{ubRed}@unibe.ch}%
-% 	\hfill%
-% 	Ruslan{\color{ubRed}.}Hlushchuk{\color{ubRed}@unibe.ch}%
-% 	\hfill%
-% 	Oleksiy{\color{ubRed}.}Khoma{\color{ubRed}@unibe.ch}%
-% 	\hfill%
-% \end{frame}
+ \begin{frame}
+	\frametitle{MicroCT group}
+	\centering%
+	\includegraphics[width=\imagewidth]{./media/team}%
+	\hfill%
+	David{\color{ubRed}.}Haberthuer{\color{ubRed}@unibe.ch}%
+	\hfill%
+	Ruslan{\color{ubRed}.}Hlushchuk{\color{ubRed}@unibe.ch}%
+	\hfill%
+	Oleksiy{\color{ubRed}.}Khoma{\color{ubRed}@unibe.ch}%
+	\hfill%
+ \end{frame}
 
 % \begin{frame}
 % 	\frametitle{\uct-group}
@@ -228,7 +227,6 @@
 % 	\end{colums}
 % \end{frame}
 
-\section{What about those teeth?}
 \begin{frame}
 	\frametitle{What about those teeth?}
 	\begin{columns}
@@ -311,7 +309,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Head}
+	\frametitle{Visualization of cichlid head}
 	\centering%
 	% Generate animations in ImageJ with 3Dscript (files are in repository)
 	% Save out as .tif slices
@@ -327,7 +325,7 @@
 		\only<2>{%
 		% Show Otolith
 		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) [shift={(0,0)}]{%
+			\node at (current page.center) {%
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{024}{073}%
 			};%
 		\end{tikzpicture}%			
@@ -335,7 +333,7 @@
 		\only<3>{%
 		%Move to PJ
 		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) [shift={(0,0)}]{%
+			\node at (current page.center) {%
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{074}{099}%
 			};%
 		\end{tikzpicture}%
@@ -343,7 +341,7 @@
 		\only<4>{%
 		%Move to PJ
 		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) [shift={(0,0)}]{%
+			\node at (current page.center) {%
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{100}{106}%
 			};%
 		\end{tikzpicture}%
@@ -351,7 +349,7 @@
 		\only<5>{%
 		%Animate to next slide
 		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) [shift={(0,0)}]{%
+			\node at (current page.center) {%
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head2pj/morphed0}{000}{099}%
 			};%
 		\end{tikzpicture}%
@@ -360,10 +358,10 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Pharyngeal jaw}
+	\frametitle{Visualization of segmented pharyngeal jaw}
 	\centering
 	\begin{tikzpicture}[remember picture,overlay]%
-		\node at (current page.center) [shift={(0,0)}]{%	
+			\node at (current page.center) {%
 		\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016.pj.animation.0}{000}{080}%
 	};%
 \end{tikzpicture}%	
@@ -424,7 +422,7 @@
 \begin{frame}
 	\frametitle{Volumetry}
 	  \begin{columns}
-		  \begin{column}{0.5\linewidth}
+		  \begin{column}{0.6\linewidth}
 			  \begin{itemize}
 				  \item<1-> Cutting samples to consistent (\(\neq\) equal!) length
 				  \item<2-> Gray value histogram shows difference
@@ -433,21 +431,20 @@
 				  \item<6-> \blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
 			  \end{itemize}
 		  \end{column}
-		  \begin{column}{0.5\linewidth}
+		  \begin{column}{0.4\linewidth}
 			  \centering
 			  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5268C.png}\\%
 			  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5269C.png}%
 			  \includegraphics<2>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.png}%
 			  \includegraphics<3>[width=\imagewidth]{./media/cox7a/grayvaluehistogram.log.png}%
-			  \includegraphics<4>[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.ThresholdedVolumeLargestComponent.png}%
+			  \includegraphics<4>[width=\imagewidth]{./media/cox7a/Volume_Boxplot.5268_5269.ThresholdedVolumeLargestComponent.png}%
 			  \includegraphics<5>[width=0.5\imagewidth]{./media/cox7a/histogram.5268C.png}%
 			  \includegraphics<5>[width=0.5\imagewidth]{./media/cox7a/histogram.5269C.png}%
-			  \includegraphics<6>[height=\imageheight]{./media/cox7a/Volume_Boxplot.5268_5269.SegmentedVolumemm3}%
+			  \includegraphics<6>[width=\imagewidth]{./media/cox7a/Volume_Boxplot.5268_5269.SegmentedVolumemm3}%
 		  \end{column}
 	  \end{columns}
   \end{frame}
 
-\section{Take home message}
 \begin{frame}
 	\frametitle{Adiöwou}
 	\begin{itemize}
