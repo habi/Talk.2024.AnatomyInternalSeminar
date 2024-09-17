@@ -11,7 +11,7 @@
 \date{September 19, 2024}
 
 % Some often used abbreviations/commands
-\newcommand{\everyframe}{33}% use only every nth frame for the animations
+\newcommand{\everyframe}{100}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
 \newcommand{\imageheight}{0.7\paperheight}% set global image height
 \newlength\imagescale% needed for scalebars
@@ -23,7 +23,7 @@
 	backend=biber,
 	sorting=none,
 	citetracker=true,%
-	%style=alpha,%
+   	%style=alpha,%
 	%url=false,%
 	%isbn=false,%
 	%maxbibnames=1,%
@@ -46,7 +46,7 @@
 	range-units=single,
 	per-mode=symbol,
 	per-symbol=/]{siunitx}
-\usepackage{animate}
+\usepackage{animate}	
 % \usepackage[absolute,overlay]{textpos}
 % \usepackage[showseconds=false,showzone=false]{datetime2}
 \usepackage{gitinfo2}
@@ -232,7 +232,7 @@
 \begin{frame}
 	\frametitle{What about those teeth?}
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.5\textwidth}		
 			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\cite{Haberthuer2021},~\cite{Wolf2021}
 			\begin{itemize}
 				\item 104 extracted human permanent mandibular canines
@@ -257,18 +257,18 @@
 			}%
 			\renewcommand{\imagewidth}{\columnwidth}
 
-		\begin{tikzpicture}[remember picture,overlay]%
+ 	 	\begin{tikzpicture}[remember picture,overlay]%
 
-
+			  
  \only<2>{					  \node at (current page.center) [shift={(0,-4pt)}]{\includegraphics[,width=\paperwidth]{./media/ZMK/tooth045/transparent-slices-rcs/image0000}};%
  }
  % Sticky note overlay from https://tex.stackexchange.com/a/159690/828
 					  \node at (current page.center) [drop shadow={shadow xshift=2pt,shadow yshift=-4pt}, inner xsep=7pt, fill=yellow, xslant=-0.25, yslant=0.25, inner ysep=10pt] {\parbox[t]{3.5cm}{\emph{How to study the internals of +100 human teeth with X-ray microtomography}\\\\ November 12, 2020}};%
 				%   \end{tikzpicture}%
 			  %}
-	 \end{tikzpicture}%
-	 %}
-	\end{column}%
+ 	 \end{tikzpicture}%
+ 	 %}
+	\end{column}%	
 \end{columns}
 \end{frame}
 
@@ -277,7 +277,7 @@
 	\frametitle{Many more teeth, but from Cichlids}
 			\begin{columns}
 			\begin{column}{0.55\linewidth}
-			Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\cite{Haberthuer2023}
+		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\cite{Haberthuer2023}
 			HYPERCITE
 		\begin{itemize}
  		 		 	\item 133 Cichlids from Lake Victoria, East Africa
@@ -330,7 +330,7 @@
 			\node at (current page.center) [shift={(0,0)}]{%
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{024}{073}%
 			};%
-		\end{tikzpicture}%
+		\end{tikzpicture}%			
 		}%
 		\only<3>{%
 		%Move to PJ
@@ -347,7 +347,7 @@
 			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{100}{106}%
 			};%
 		\end{tikzpicture}%
-		}%
+		}%		
 		\only<5>{%
 		%Animate to next slide
 		\begin{tikzpicture}[remember picture,overlay]%
@@ -363,10 +363,10 @@
 	\frametitle{Pharyngeal jaw}
 	\centering
 	\begin{tikzpicture}[remember picture,overlay]%
-		\node at (current page.center) [shift={(0,0)}]{%
+		\node at (current page.center) [shift={(0,0)}]{%	
 		\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016.pj.animation.0}{000}{080}%
 	};%
-\end{tikzpicture}%
+\end{tikzpicture}%	
 \note{Fish 104016, Scan pharynx_rec; This fish was scanned on 2021-02-04T13:30:11 on the SkyScan1272, with a voxel size of 5.0 μm.}
 \note{A human hair typically has a thickness ranging from 17 to 181 micrometers (microns), depending on various factors like the individual's hair type, age, and ethnicity. On average, most human hair strands fall between 50 to 100 micrometers in diameter.}
 \end{frame}
@@ -398,9 +398,9 @@
 
 \subsection{Fish II}
 \begin{frame}
-	\frametitle{More fish, but muscles}
+	\frametitle{More fish, but muscles}	
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.5\textwidth}		
 			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber~\cite{Garcia-Poyatos2024}
 		HYPERCITE
 			\begin{itemize}%
@@ -417,7 +417,7 @@
 				\lstinputlisting[linerange={2-4,15-15,17-19,28-30,36-37,40-40,44-44,53-54}]{./media/cox7a/5268A/proj/5268A.log}%
 				}%
 		\end{column}%
-	\end{columns}
+	\end{columns}	
 \note{The oxidative phosphorylation (OXPHOS) system is dynamic and the respiratory complexes (RCs) coexist with super-assembled quaternary structures called supercomplexes (SCs). How assembly occurs and the physiological role of supercomplex assembly is still under intensive investigation. The Cox7a family member Cox7a2l, also known as Scaf1, promotes CIII-CIV super assembly and energetic efficiency in zebrafish, mice, and humans. Here we studied the role of a second member of the Cox7a family, Cox7a1 in SC assembly and striated muscle physiology. We found that this protein drives CIV homodimer formation, which increases CIV activity. The substantial reduction in CIV2 formation led to a profound metabolic rearrangement with a consequent non-pathological loss of skeletal muscle performance and muscle mass not observed in cox7a2l. Ablation of Cox7a1 also rewired heart metabolism. While overall cardiac function was not affected, the absence of Cox7a1, but not Cox7a2l increased cardiac regenerative capacity. In sum, we describe a high specificity of Cox7a isoform in controlling OXPHOS assembly and muscle metabolism. While overall OXPHOS activity is modified, the loss of CIII-CIV heterodimer formation or CIV homodimer formation have very distinct metabolic and physiological consequences, highlighting the complexity of OXPHOS function and the importance of cox7a1 in striated muscle maturation.}
 \end{frame}
 
