@@ -11,7 +11,7 @@
 \date{September 19, 2024}
 
 % Some often used abbreviations/commands
-\newcommand{\everyframe}{100}% use only every nth frame for the animations
+\newcommand{\everyframe}{2}% use only every nth frame for the animations
 \newcommand{\imagewidth}{\columnwidth}% set global image width
 \newcommand{\imageheight}{0.7\paperheight}% set global image height
 \newlength\imagescale% needed for scalebars
@@ -292,18 +292,10 @@
 		%Move to PJ
 		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{1681}{1900}%
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{1681}{1920}%
 			};%
 		\end{tikzpicture}%
 	}%
-	\only<4>{%
-		%Move to PJ
-		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{0100}{0106}%
-			};%
-		\end{tikzpicture}%
-	}%		
 \note{Fish 104016, Scan head_rec; This fish was scanned on 2022-01-27T13:32:59 on the SkyScan2214, with a voxel size of 13.0 μm.}
 \end{frame}
 
