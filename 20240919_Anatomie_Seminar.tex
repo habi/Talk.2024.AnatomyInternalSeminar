@@ -1,7 +1,7 @@
 % Compile with:
 % latexmk -pvc -interaction=nonstopmode *Seminar.tex
-%\documentclass[aspectratio=169,10pt]{beamer}
-\documentclass[aspectratio=169,10pt,draft]{beamer}
+\documentclass[aspectratio=169,10pt]{beamer}
+%\documentclass[aspectratio=169,10pt,draft]{beamer}
 \usetheme[language=english]{ubbeamer2023}
 
 \title{Tomographic imaging of fish}
@@ -52,8 +52,6 @@
 \usepackage{shadowtext}
 	\shadowoffset{1pt}
 	\shadowcolor{ubRed}
-\usepackage{pgfplots}
-	\pgfplotsset{compat=newest}
 \usepackage{microtype}
 \usepackage[detect-all=true,
 	range-phrase=--,
@@ -61,45 +59,12 @@
 	per-mode=symbol,
 	per-symbol=/]{siunitx}
 \usepackage{animate}	
-% \usepackage[absolute,overlay]{textpos}
-% \usepackage[showseconds=false,showzone=false]{datetime2}
 \usepackage{gitinfo2}
 \usepackage{xspace}
-% \usepackage{ccicons}
 \usepackage{fontawesome5}
 \usepackage{csquotes}
 \usepackage{listings}
 	\lstset{basicstyle=\scriptsize\ttfamily}
-	% highlight a line in listings: https://tex.stackexchange.com/a/58543/828
-	% Including a crude workaround for recent versions of `listings`: https://tex.stackexchange.com/a/451538/828
-	\makeatletter%
-	\let\old@lstKV@SwitchCases\lstKV@SwitchCases%
-	\def\lstKV@SwitchCases#1#2#3{}%
-	\makeatother%
-	\usepackage{lstlinebgrd}%
-	\makeatletter%
-	\let\lstKV@SwitchCases\old@lstKV@SwitchCases%
-	\lst@Key{numbers}{none}{%
-		\def\lst@PlaceNumber{\lst@linebgrd}%
-		\lstKV@SwitchCases{#1}%
-		{none:\\%
-		left:\def\lst@PlaceNumber{\llap{\normalfont%
-		\lst@numberstyle{\thelstnumber}\kern\lst@numbersep}\lst@linebgrd}\\%
-		right:\def\lst@PlaceNumber{\rlap{\normalfont%
-			\kern\linewidth{}\kern\lst@numbersep%
-			\lst@numberstyle{\thelstnumber}}\lst@linebgrd}%
-		}{\PackageError{Listings}{Numbers #1 unknown}\@ehc}}%
-	\makeatother%
-	% highlight a line in listings: https://tex.stackexchange.com/a/58543/828
-
-% change tikz font to slide font
-% https://tex.stackexchange.com/a/33329/828
-\usepackage[eulergreek]{sansmath}
-\pgfplotsset{tick label style = {font=\sansmath\sffamily},
-	every axis label = {font=\sansmath\sffamily},
-	legend style = {font=\sansmath\sffamily},
-	label style = {font=\sansmath\sffamily}
-}
 
 % Globally thicker lines in with tikz
 % https://tex.stackexchange.com/a/206769/828
@@ -197,7 +162,7 @@
 \begin{frame}
  	\frametitle{MicroCT group}
 	\begin{columns}
-		\begin{column}{0.6\linewidth}
+		\begin{column}{0.5\linewidth}
  			\begin{itemize}
  				\item microangioCT~\cite{Hlushchuk2018}
  				\begin{itemize}
@@ -210,7 +175,7 @@
  				\item Automate \emph{all} the things!~\cite{Haberthuer2021,Haberthuer2023}
  			\end{itemize}
 		\end{column}
-		\begin{column}{0.4\linewidth}
+		\begin{column}{0.5\linewidth}
  			\vfill%
  			\includegraphics<1>[width=\imagewidth]{./media/1172}%
  			\only<1>{\source{brukersupport.com}{}}%
@@ -228,7 +193,7 @@
 \begin{frame}
 	\frametitle{What about those teeth?}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}		
+		\begin{column}{0.5\linewidth}		
 			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\footcite{Haberthuer2021,Wolf2021}
 			\begin{itemize}
 				\item 104 extracted human permanent mandibular canines
@@ -237,42 +202,39 @@
 				\item Reproducible and automated image analysis with \href{https://www.python.org/}{\faPython} in \href{https://jupyter.org/}{Jupyter}~\cite{Kluyver2016}
 			\end{itemize}
 		\end{column}
-					\begin{column}{0.4\textwidth}
+		\begin{column}{0.5\linewidth}
 			\centering%
 			\renewcommand{\imagewidth}{0.7\linewidth}
 			\only<1>{%
-			\pgfmathsetlength{\imagescale}{\imagewidth/2716}%
-			\def\x{1678}% scalebar-x starting at golden ratio of image width of 2716px = 1678
-			\def\y{2444}% scalebar-y at 90% of image height of 2716px = 2444
-			\begin{tikzpicture}[x=\imagescale,y=-\imagescale]
-				\node[anchor=north west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=\imagewidth]{./media/bucketofteeth}};
-				% 2132.087px = 140.0mm -> 100px = 6566.337um -> 7.615px = 500um, 1.523px = 100um
-				%\draw[|-|,blue,thick] (299,1340) -- (2430,1406) node [sloped,midway,above,fill=white,semitransparent,text opacity=1] {\SI{140.0}{\milli\meter} (2132px) TEMPORARY!};
-				\draw[|-|,white,thick,shadowed] (\x,\y) -- (\x+761.5,\y) node [midway,above] {\shadowtext{\SI{5}{\centi\meter}}};
-			\end{tikzpicture}%
-			}%
+				\pgfmathsetlength{\imagescale}{\imagewidth/2716}%
+				\def\x{1678}% scalebar-x starting at golden ratio of image width of 2716px = 1678
+				\def\y{2444}% scalebar-y at 90% of image height of 2716px = 2444
+				\begin{tikzpicture}[x=\imagescale,y=-\imagescale]
+					\node[anchor=north west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=\imagewidth]{./media/bucketofteeth}};
+					% 2132.087px = 140.0mm -> 100px = 6566.337um -> 7.615px = 500um, 1.523px = 100um
+					%\draw[|-|,blue,thick] (299,1340) -- (2430,1406) node [sloped,midway,above,fill=white,semitransparent,text opacity=1] {\SI{140.0}{\milli\meter} (2132px) TEMPORARY!};
+					\draw[|-|,white,thick,shadowed] (\x,\y) -- (\x+761.5,\y) node [midway,above] {\shadowtext{\SI{5}{\centi\meter}}};
+				\end{tikzpicture}%
+				}%
 			\renewcommand{\imagewidth}{\columnwidth}
-
- 	 	\begin{tikzpicture}[remember picture,overlay]%
-
-			  
- \only<2>{					  \node at (current page.center) {\includegraphics[width=\paperwidth]{./media/ZMK/tooth045/transparent-slices-rcs/image0000}};%
- }
- % Sticky note overlay from https://tex.stackexchange.com/a/159690/828
-					  \node at (current page.center) [drop shadow={shadow xshift=2pt,shadow yshift=-4pt}, inner xsep=7pt, fill=yellow, xslant=-0.25, yslant=0.25, inner ysep=10pt] {\parbox[t]{3.5cm}{\emph{How to study the internals of +100 human teeth with X-ray microtomography}\\\\ November 12, 2020}};%
-				%   \end{tikzpicture}%
-			  %}
- 	 \end{tikzpicture}%
- 	 %}
-	\end{column}%	
-\end{columns}
+ 	 		\begin{tikzpicture}[remember picture,overlay]%		  
+ 				\only<2>{%
+ 					\node at (current page.center) [shift={(0,-2.9mm)}]{% 2.9mm comes from the unibe template
+						\includegraphics[width=\paperwidth]{./media/ZMK/tooth045/transparent-slices-rcs/image0000}};%
+ 					}%
+ 				% Sticky note overlay from https://tex.stackexchange.com/a/159690/828
+				% To show it on both slides, we need to put it in the tikzpicture and `only<2>' the teeth
+				\node at (current page.center) [shift={(0,-2.9mm)},drop shadow={shadow xshift=2pt,shadow yshift=-4pt}, inner xsep=7pt, fill=yellow, xslant=-0.25, yslant=0.25, inner ysep=10pt] {\parbox[t]{3.5cm}{\emph{How to study the internals of +100 human teeth with X-ray microtomography}\\\\ November 12, 2020}};%
+			\end{tikzpicture}%
+		\end{column}%	
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Many more teeth, but from Cichlids}
 			\begin{columns}
-			\begin{column}{0.6\linewidth}
-			Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\footcite{Haberthuer2023}
+			\begin{column}{0.5\linewidth}
+		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\footcite{Haberthuer2023}
 		\begin{itemize}
  		 		 	\item 133 Cichlids from Lake Victoria, East Africa
 					\begin{itemize}
@@ -288,11 +250,11 @@
 		 			\end{itemize}
 		 		\end{itemize}
 			\end{column}
-			\begin{column}{0.4\linewidth}
+			\begin{column}{0.5\linewidth}
 				\centering
 				\only<1>{%
 					\includegraphics[width=\imagewidth]{./media/EAWAG/journal.pone.0291003.g001.png}%
-					\sourcelink{https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0291003.g001}{doi:gsst8t}{Fig.~1}%
+					\sourcelink{https://doi.org/10.1371/journal.pone.0291003.g001}{DOI:gsst8t}{Fig.~1}%
 					}%
 				\includegraphics<2>[width=\imagewidth]{./media/EAWAG/lengths.plot.png}%
 				\includegraphics<3>[width=\imagewidth]{./media/EAWAG/lengths.violinplot.png}%
@@ -314,69 +276,78 @@
 		% Show PJ
 		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-				\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{000}{023}%
+				\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{0000}{480}%
 			};%
 		\end{tikzpicture}%
 	}%
-		\only<2>{%
+	\only<2>{%
 		% Show Otolith
 		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{024}{073}%
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{0481}{1680}%
 			};%
 		\end{tikzpicture}%			
-		}%
-		\only<3>{%
+	}%
+	\only<3>{%
 		%Move to PJ
 		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{074}{099}%
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{1681}{1900}%
 			};%
 		\end{tikzpicture}%
-		}%
-		\only<4>{%
+	}%
+	\only<4>{%
 		%Move to PJ
 		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.0}{100}{106}%
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head/104016.head.rec.animation.}{0100}{0106}%
 			};%
 		\end{tikzpicture}%
-		}%		
-		\only<5>{%
-		%Animate to next slide
-		\begin{tikzpicture}[remember picture,overlay]%
-			\node at (current page.center) {%
-			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head2pj/morphed0}{000}{099}%
-			};%
-		\end{tikzpicture}%
-		}%
+	}%		
 \note{Fish 104016, Scan head_rec; This fish was scanned on 2022-01-27T13:32:59 on the SkyScan2214, with a voxel size of 13.0 μm.}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Visualization of segmented pharyngeal jaw}
 	\centering
-	\begin{tikzpicture}[remember picture,overlay]%
+	\only<1>{%
+		%Animate from head-dataset to segmented pj
+		\begin{tikzpicture}[remember picture,overlay]%
 			\node at (current page.center) {%
-		\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016.pj.animation.0}{000}{080}%
-	};%
-\end{tikzpicture}%	
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.head2pj/morphed0}{000}{240}%
+			};%
+		\end{tikzpicture}
+		}%
+	\only<2>{%
+		\begin{tikzpicture}[remember picture,overlay]%
+			\node at (current page.center) {%
+				\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016.pj.animation.0}{000}{700}%
+			};%
+		\end{tikzpicture}%	
+	}%
+	\only<3>{%
+	\begin{tikzpicture}[remember picture,overlay]%
+		\node at (current page.center) {%
+			\animategraphics[autoplay,width=\paperwidth,every=\everyframe]{24}{./media/EAWAG/animation.pj/104016.pj.animation.}{0701}{1440}%
+		};%
+	\end{tikzpicture}%	
+}%	
 \note{Fish 104016, Scan pharynx_rec; This fish was scanned on 2021-02-04T13:30:11 on the SkyScan1272, with a voxel size of 5.0 μm.}
 \note{A human hair typically has a thickness ranging from 17 to 181 micrometers (microns), depending on various factors like the individual's hair type, age, and ethnicity. On average, most human hair strands fall between 50 to 100 micrometers in diameter.}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Data wrangling by example: Cichlids}
-	\centering
-	\includegraphics<1>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_01_Overview}%
-	\includegraphics<2>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_02_GrayValues}%
-	\includegraphics<3>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_03_GrayValuesRegion}%
-	\includegraphics<4>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_04_GrayValuesSmoothed}%
-	\includegraphics<5>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_05_Peaks}%
-	\includegraphics<6>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_06_Peaks_All}%
-	\includegraphics<7>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_07_ExtractedRegions}%
-	\includegraphics<8>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_08_ExtractedRegionsMIPs}%
-	\includegraphics<9>[height=\imageheight]{./media/EAWAG/Otolither_104016_head_09_ExtractedOtolithMasked}%
+	\centering%
+	\includegraphics<1>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_01_Overview}%
+	\includegraphics<2>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_02_GrayValues}%
+	\includegraphics<3>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_03_GrayValuesRegion}%
+	\includegraphics<4>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_04_GrayValuesSmoothed}%
+	\includegraphics<5>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_05_Peaks}%
+	\includegraphics<6>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_06_Peaks_All}%
+	\includegraphics<7>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_07_ExtractedRegions}%
+	\includegraphics<8>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_08_ExtractedRegionsMIPs}%
+	\includegraphics<9>[width=\imagewidth]{./media/EAWAG/Otolither_104016_head_09_ExtractedOtolithMasked}%
 	\only<10>{\href{https://htmlpreview.github.io/?https://github.com/habi/EAWAG-manuscript/blob/main/content/data/104016_Enterochromis_I_cinctus_St_E.head.rec.Otolith.Region.3D.html}{Exported 3D view}}%
 \end{frame}
 
@@ -385,7 +356,7 @@
 	\centering%
 	\only<1>{%
 		\includegraphics[height=\imageheight]{./media/EAWAG/pone.0112732.g001.png}%
-		\sourcelink{https://doi.org/10.1371/journal.pone.0112732}{DOI:gk6b4j}{Figure 1}%
+		\sourcelink{https://doi.org/10.1371/journal.pone.0112732.g001}{DOI:gk6b4j}{Fig.~1}%
 		}%
 	\only<2>{%
 		\includegraphics[height=\imageheight]{./media/EAWAG/3 PCA PC1vPC2 all specimens by diet}%
@@ -399,7 +370,7 @@
 \begin{frame}
 	\frametitle{More fish, but muscles}	
 	\begin{columns}
-		\begin{column}{0.6\textwidth}		
+		\begin{column}{0.5\linewidth}		
 			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber~\footcite{Garcia-Poyatos2024}
 			\begin{itemize}%
 				\item Influence of \emph{cox7a} on muscle volume%
@@ -407,7 +378,7 @@
 				\item 2\(\times\)2\(\times\)5 Zebrafish, WT and KO%
 			\end{itemize}%
 		\end{column}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.5\linewidth}
 			\only<1>{%
 				\includegraphics[height=\imageheight]{./media/cox7a/Cell_Fig3}%
 				}%
@@ -421,17 +392,17 @@
 
 \begin{frame}
 	\frametitle{Volumetry}
-	  \begin{columns}
-		  \begin{column}{0.6\linewidth}
+		\begin{columns}
+		  \begin{column}{0.5\linewidth}
 			  \begin{itemize}
-				  \item<1-> Cutting samples to consistent (\(\neq\) equal!) length
-				  \item<2-> Gray value histogram shows difference
-				  \item<4-> Simple thresholding and volume counting
-				  \item<5-> Segmentation
-				  \item<6-> \blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
+					\item<1-> Cutting samples to consistent (\(\neq\) equal!) length
+					\item<2-> Gray value histogram shows difference
+					\item<4-> Simple thresholding and volume counting
+					\item<5-> Segmentation
+					\item<6-> \blockquote[Carla Lembke][]{The mutant was 5269, the wildtype was 5268. [...], all males.}
 			  \end{itemize}
 		  \end{column}
-		  \begin{column}{0.4\linewidth}
+		  \begin{column}{0.5\linewidth}
 			  \centering
 			  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5268C.png}\\%
 			  \includegraphics<1>[width=\imagewidth]{./media/cox7a/cut.5269C.png}%
