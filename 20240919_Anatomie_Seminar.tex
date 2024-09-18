@@ -20,26 +20,31 @@
 \newcommand{\ie}{i.\,e.\xspace}%
 
 \usepackage[%
-	backend=biber,
-	style=ieee,% ieee is needed for hypercite at the bottomof the slides
-	citetracker=true,
-	isbn=false,
-	url=false
-	]{biblatex}
+	backend=biber,%
+	sorting=none,%
+	style=ieee,% `ieee` is needed for hypercite/footcite at the bottom of the slides
+	citetracker=true,%
+	isbn=false,%
+	url=false,%
+	maxnames=1,minnames=1,% Show only first author in references
+	]{biblatex}%
 % Globally remove stuff from bibliography
 % https://tex.stackexchange.com/a/25232
-\DeclareSourcemap{
-  \maps[datatype=bibtex]{
+\DeclareSourcemap{%
+  \maps[datatype=bibtex]{%
     \map{%
-      \step[fieldset=journal, null]
-      \step[fieldset=editor, null]
-      \step[fieldset=volume, null]
-      \step[fieldset=number, null]
-      \step[fieldset=pages, null]
-      \step[fieldset=year, null]
-    }
-  }
-}
+      \step[fieldset=journal, null]%
+      \step[fieldset=editor, null]%
+      \step[fieldset=volume, null]%
+      \step[fieldset=number, null]%
+      \step[fieldset=pages, null]%
+      \step[fieldset=year, null]%
+    }%
+  }%
+}%
+% Fix double-comma in footcite
+% Copy the relevant line from https://tex.stackexchange.com/a/409861/828
+\renewcommand\labelnamepunct{\adddot\space} %punct after autor
 \addbibresource{../../Documents/library.bib}% FastSSD, Windows or Mac works (on Linux/FastSSD we generated a 'Document' folder at the correct level and `ln -s ~/P/Documents/library.bib .` to it)
 \usepackage{tikz}
 	\usetikzlibrary{shadows,spy}
@@ -131,31 +136,32 @@
 		}%
 	}%
 
+% Make us a nice citation command for citing in a footnote
+% https://tex.stackexchange.com/a/396754/828
 \makeatletter
 \newbibmacro*{hypercite}{%
-  \renewcommand{\@makefntext}[1]{\noindent\normalfont##1}%
-  \footnotetext{%
-    \blxmkbibnote{foot}{%
-    \printtext[labelnumberwidth]{%
-      \printfield{prefixnumber}%
-      \printfield{labelnumber}}%
-    \addspace
-    \fullcite{\thefield{entrykey}}}}}
-
+	\renewcommand{\@makefntext}[1]{\noindent\normalfont##1}%
+	\footnotetext{%
+		\blxmkbibnote{foot}{%
+			\printtext[labelnumberwidth]{%
+				\printfield{prefixnumber}%
+				\printfield{labelnumber}%
+			}%
+			\addspace%
+			\fullcite{\thefield{entrykey}}%
+			}%
+		}%
+	}%
 \DeclareCiteCommand{\hypercite}%
-  {\usebibmacro{cite:init}}
-  {\usebibmacro{hypercite}}
-  {}
-  {\usebibmacro{cite:dump}}
+	{\usebibmacro{cite:init}}%
+	{\usebibmacro{hypercite}}%
+	{}%
+	{\usebibmacro{cite:dump}}%
+% Redefine the \footcite command to use the reference number
+\renewcommand{\footcite}[1]{\cite{#1}\hypercite{#1}}
 \makeatother
-
-% Remove stuff from footcite/hypercite
+% Remove title when using footcite/hypercite
 \AtEveryCitekey{\clearfield{title}}
-% No "In:" http://tex.stackexchange.com/a/10686/828
-\renewbibmacro{in:}{}
-% No parentheses around the (now empty) year: https://tex.stackexchange.com/a/147537/828
-\renewcommand{\bibopenparen}{\addcomma\addspace}
-\renewcommand{\bibcloseparen}{\addcomma\addspace}
 
 \begin{document}
 \begin{frame}
@@ -223,7 +229,7 @@
 	\frametitle{What about those teeth?}
 	\begin{columns}
 		\begin{column}{0.6\textwidth}		
-			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\cite{Haberthuer2021,Wolf2021}\hypercite{Haberthuer2021},~\hypercite{Wolf2021}
+			Collaboration with \href{https://www.zmk.unibe.ch/}{zmk bern – Zahnmedizinische Kliniken}~\footcite{Haberthuer2021,Wolf2021}
 			\begin{itemize}
 				\item 104 extracted human permanent mandibular canines
 				\item Segmentation of teeth and root canal
@@ -266,7 +272,7 @@
 	\frametitle{Many more teeth, but from Cichlids}
 			\begin{columns}
 			\begin{column}{0.6\linewidth}
-		 	Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\hypercite{Haberthuer2023}
+			Collaboration with team of \href{https://www.aqua.iee.unibe.ch/}{\emph{Aquatic Ecology \& Evolution}}, from the \href{https://www.iee.unibe.ch/}{Institute of Ecology and Evolution}~\footcite{Haberthuer2023}
 		\begin{itemize}
  		 		 	\item 133 Cichlids from Lake Victoria, East Africa
 					\begin{itemize}
@@ -286,7 +292,7 @@
 				\centering
 				\only<1>{%
 					\includegraphics[width=\imagewidth]{./media/EAWAG/journal.pone.0291003.g001.png}%
-					\sourcelink{https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0291003.g001}{doi:10.1371/journal.pone.0291003}{Fig.~1}%
+					\sourcelink{https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0291003.g001}{doi:gsst8t}{Fig.~1}%
 					}%
 				\includegraphics<2>[width=\imagewidth]{./media/EAWAG/lengths.plot.png}%
 				\includegraphics<3>[width=\imagewidth]{./media/EAWAG/lengths.violinplot.png}%
@@ -394,7 +400,7 @@
 	\frametitle{More fish, but muscles}	
 	\begin{columns}
 		\begin{column}{0.6\textwidth}		
-			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber~\cite{Garcia-Poyatos2024}\hypercite{Garcia-Poyatos2024}
+			Collaboration with \emph{Developmental Biology and Regeneration} group of Nadia Mercader Huber~\footcite{Garcia-Poyatos2024}
 			\begin{itemize}%
 				\item Influence of \emph{cox7a} on muscle volume%
 				\item Confirmation of results by \uct%
