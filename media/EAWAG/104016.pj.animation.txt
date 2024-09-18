@@ -27,28 +27,28 @@ At frame 0:
 - translate by (0.0, -100.0, 0.0)
 - zoom by a factor of 1.4
 
-// Recorded transition
-From frame 0 to frame 20:
+// Recorded transition to show side in 20 seconds (20*24)
+From frame 0 to frame 480:
 - rotate by -45.0 degrees vertically
 - rotate by -45.0 degrees around (0, 0, 1)
 - rotate by 70.0 degrees horizontally
 - translate by (-75.0, -75.0, -100.0)
 
 // Recorded transition
-From frame 21 to frame 40:
+From frame 481 to frame 960:
 - rotate by 12.0 degrees vertically
 - rotate by -4.0 degrees horizontally
 - zoom by a factor of 2.5
 - translate by (-116.2, 53.7, 76.4)
 // Recorded transition
-From frame 41 to frame 60:
+From frame 961 to frame 1440:
 - rotate by 24.5 degrees vertically
 - rotate by 31.4 degrees around (0, 0, 1)
 - rotate by 110.3 degrees horizontally
 - zoom by a factor of 0.5
 - translate by (66.4, 48.6, -6.1)// Recorded transition
 // Go back to start
-From frame 61 to frame 80:
+//From frame 145 to frame 192:
 - rotate by 7.8 degrees vertically
 - rotate by 17.9 degrees around (0, 0, 1)
 - rotate by 51.0 degrees horizontally

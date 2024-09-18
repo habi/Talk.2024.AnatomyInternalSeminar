@@ -26,27 +26,26 @@ At frame 0:
 // Move to border of the frame
 - zoom by a factor of 0.5
 - translate by (300, 0, 0.0)
-// Move to OJ
-From frame 0 to frame 20:
+// Move to OJ in 20 seconds (20*24)
+From frame 0 to frame 480:
 - rotate by -0.0 degrees around (0, 0, 1)
 - rotate by -90.0 degrees horizontally
 - zoom by a factor of 5.9
 - translate by (107.1, -922.5, -1783.2)
-// Move out to see whole head again
-From frame 25 to frame 45:
+// Move out to see whole head again in another 20 seconds (40*24)
+From frame 481 to frame 960:
 - rotate by 11.2 degrees vertically
 - rotate by -0.7 degrees around (0, 0, 1)
 - rotate by 49.0 degrees horizontally
 - zoom by a factor of 0.3
 - translate by (-13.9, 148.6, 39.1)
-// Crop left side of head to show otolith
-From frame 50 to frame 70:
+// Crop left side of head to show otolith in another 20 seconds (60*24)
+From frame 961 to frame 1440:
 - change all channels' bounding box x to (0.0, 1488.0)
 - change all channels' bounding box y to (0.0, 445.0)
 - change all channels' bounding box z to (0.0, 1889.0)
 - change all channels' front/back clipping to (-1278.0, 1278.0)
 // Transition to otolith position
-From frame 50 to frame 70:
 - rotate by -1.0 degrees vertically
 - rotate by 0.0 degrees around (0, 0, 1)
 - rotate by 12.0 degrees horizontally
@@ -54,8 +53,8 @@ From frame 50 to frame 70:
 - translate by (2.8, 494.7, 4.2)
 - change channel 1 intensity to (58.0, 106.0, 1.0)
 - change channel 1 alpha to (13.0, 255.0, 2.0)
-// Transition to position where we can see the PJ nicely
-From frame 75 to frame 95:
+// Transition to position where we can see the PJ nicely in another 20 seconds (80*24)
+From frame 1441 to frame 1920:
 - rotate by 1.7 degrees vertically
 - rotate by -0.1 degrees around (0, 0, 1)
 - rotate by -61.0 degrees horizontally
@@ -65,19 +64,18 @@ From frame 75 to frame 95:
 - change all channels' bounding box y to (210.0, 668.0)
 - change all channels' bounding box z to (943.0, 1506.0)
 - change all channels' front/back clipping to (-1278.0, 1278.0)
-// From frame 100 to frame 120:
 - change all channels' bounding box x to (435.0, 709.0)
 - change all channels' bounding box y to (220.0, 634.0)
 - change all channels' bounding box z to (979.0, 1297.0)
 - change all channels' front/back clipping to (237.0, 1278.0)// Recorded transition
-// From frame 120 to frame 140:
 - rotate by 33.5 degrees vertically
 - rotate by 0.0 degrees around (0, 0, 1)
 - rotate by -0.0 degrees horizontally
 - zoom by a factor of 0.8
 - translate by (183.7, 222.3, 168.2)
-// Transition to position that corresponds to second animation
-From frame 100 to frame 105:
+// Transition to position that corresponds to second animation in 5 seconds (85*24) (120frames)
+// Like this we can moroh in another 5 seconds
+From frame 1921 to frame 2040:
 - rotate by -30.0 degrees vertically
 - rotate by 0.0 degrees around (0, 0, 1)
 - rotate by 0.0 degrees horizontally
