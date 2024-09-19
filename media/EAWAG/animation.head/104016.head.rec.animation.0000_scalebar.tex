@@ -1,0 +1,33 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}			% for drawing everything
+	\usetikzlibrary{spy}	% for zooming
+\usepackage{siunitx}		% for nice SI units
+\usepackage{shadowtext}	% for shadowed text on the scalebar
+	\shadowoffset{1pt}	% ideally the same as on line 13...
+	\shadowcolor{green}	% ideally the same as on line 13...
+\newcommand{\imsize}{\linewidth}% default width of image
+\newlength\imagewidth% needed for correct scalebar
+\newlength\imagescale% needed for correct scalebar
+\begin{document}%
+%----------
+\tikzset{shadowed/.style={preaction={transform canvas={shift={(1pt,-1pt)}},draw=green, thick}}} % shadowed drawing https://tex.stackexchange.com/a/185853/828
+\pgfmathsetlength{\imagewidth}{\imsize}%
+\pgfmathsetlength{\imagescale}{\imagewidth/1280}%
+\def\x{791}% scalebar-x starting at golden ratio of image width of 1280px = 791
+\def\y{648}% scalebar-y at 90% of image height of 720px = 648
+\def\mag{4}% magnification of inset
+\def\size{75}% size of inset
+\begin{tikzpicture}[x=\imagescale,y=-\imagescale,spy using outlines={rectangle,magnification=\mag,size=\size,connect spies}]
+	\begin{scope}
+		\clip (0,0) rectangle (1280,720);
+		%\clip (640.0,360.0) circle (360.0);
+		\node[anchor=north west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=\imagewidth]{/media/habi/Fast_SSD/Talks/20240919_Anatomie_Seminar/media/EAWAG/animation.head/{{104016.head.rec.animation.0000}}}};
+	\end{scope}
+	%\spy [red] on (980,420) in node at (0,0) [anchor=north west];
+	% 196.739px = 6.045mm -> 100px = 3072.594um -> 16.273px = 500um, 3.255px = 100um
+	%\draw[|-|,blue,thick] (652,353) -- (849,369) node [sloped,midway,above,fill=white,semitransparent,text opacity=1] {\SI{6.045}{\milli\meter} (197px) TEMPORARY!};
+	\draw[|-|,white,thick,shadowed] (\x,\y) -- (\x+16.273,\y) node [midway,above] {\shadowtext{\SI{500}{\micro\meter}}};
+	%\draw[color=red, anchor=south west] (0,720) node [fill=white, semitransparent] {Legend} node {Legend};
+\end{tikzpicture}%
+%----------
+\end{document}%
